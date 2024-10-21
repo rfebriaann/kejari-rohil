@@ -11,7 +11,7 @@
     </head>
     <body class="bg-[#0C0E16] text-white">
         <x-side-menu />
-        <div class="sm:ml-80 m-16 text-white">
+        <div class="sm:ml-72 m-16 text-white">
             {{$slot}}
         </div>
         <script>

@@ -1,5 +1,5 @@
 <div class="mx-20">
-    <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-[320px] h-screen transition-transform -translate-x-full sm:translate-x-0 p-10" aria-label="Sidebar">
+    <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-[280px] h-screen transition-transform -translate-x-full sm:translate-x-0 p-10" aria-label="Sidebar">
         <div class="bg-[#1F212D] flex flex-col justify-around items-center rounded-[40px] h-full w-full py-4 overflow-y-auto border border-[#1F212D]">
             <div>
                 <a href="">

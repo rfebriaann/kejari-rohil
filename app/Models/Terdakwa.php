@@ -2,11 +2,17 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Terdakwa extends Model
 {
-    protected $table = 'terdakwa';
+    use HasFactory;
+
+    protected $fillable = [
+        'nama',
+        'nomor_putusan',
+    ];
 
     public function dakwaan()
     {

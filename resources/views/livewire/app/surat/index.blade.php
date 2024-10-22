@@ -53,32 +53,68 @@
                             </div> --}}
                         </div>
                         <div class="overflow-x-auto">
-                            <table class="w-full text-md text-left text-white dark:text-gray-400">
+                            <h2 class="text-lg font-semibold mb-4">Daftar Semua Dakwaan</h2>
+                        
+                            <table class="min-w-full text-md text-left text-white dark:text-gray-400">
                                 <thead class="text-xs text-white uppercase bg-[#2b2f3f]">
                                     <tr>
                                         <th scope="col" class="px-4 py-3">#</th>
-                                        <th scope="col" class="px-4 py-3">Nama Bisnis</th>
-                                        <th scope="col" class="px-4 py-3">Logo Bisnis</th>
-                                        <th scope="col" class="px-4 py-3">Aksi</th>
+                                        <th scope="col" class="px-4 py-3">Nomor Putusan</th>
+                                        <th scope="col" class="px-4 py-3">Tanggal Putusan</th>
+                                        <th scope="col" class="px-4 py-3">Pasal Didakwakan</th>
+                                        <th scope="col" class="px-4 py-3">Keputusan</th>
+                                        <th scope="col" class="px-4 py-3">Terdakwa</th>
+                                        <th scope="col" class="px-4 py-3">Barang Bukti</th>
+                                        <th scope="col" class="px-4 py-3">Keputusan Barang Bukti</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{-- @php
+                                    @php
                                         $i = 1;
                                     @endphp
-                                    @foreach ($business as $busines)
-                                    <tr class="border-b dark:border-gray-200">
-                                            <td class="px-4 py-3">{{$i++}}</td>
-                                            <td class="px-4 text-left text-black py-3"><span class="text-md  leading-8 font-semibold p-1 rounded-2xl px-4">{{ucwords(strtolower($busines->business_name))}}</span></td>
-                                            <td class="px-4 text-center text-black py-3">
-                                                <img class="w-[80px]" src="{{asset('storage/assets/busines_images/' . $busines->image)}}" alt="">
+                                    @foreach ($dakwaans as $dakwaan)
+                                        <tr class="border-b dark:border-gray-200">
+                                            <td class="px-4 py-3">{{ $i++ }}</td>
+                                            <td class="px-4 py-3">{{ $dakwaan->nomor_putusan }}</td>
+                                            <td class="px-4 py-3">{{ \Carbon\Carbon::parse($dakwaan->tanggal_putusan)->translatedFormat('j F Y') }}</td>
+                                            <td class="px-4 py-3">{{ $dakwaan->pasal_didakwakan }}</td>
+                                            <td class="px-4 py-3">{{ $dakwaan->keputusan }}</td>
+                                            
+                                            <!-- Display Terdakwa dengan Nomor -->
+                                            <td class="px-4 py-3">
+                                                <ul>
+                                                    @php $terdakwaIndex = 1; @endphp
+                                                    @foreach ($dakwaan->terdakwaks as $terdakwa)
+                                                        <li>{{ $terdakwaIndex++ }}. {{ $terdakwa->nama }}</li>
+                                                    @endforeach
+                                                </ul>
                                             </td>
-                                            <td scope="row" class="px-1 py-3 flex flex-col items-start justify-center text-gray-900 font-semibold"><a class="" href="{{route('admin.business.edit.{id}', $busines->id)}}">Edit ✏️</a> <button wire:click="destroy({{$busines->id}})">Hapus 🗑️</button></td>
-                                    </tr>
-                                    @endforeach --}}
+                        
+                                            <!-- Display Barang Bukti dengan Nomor -->
+                                            <td class="px-4 py-3">
+                                                <ul>
+                                                    @php $barangBuktiIndex = 1; @endphp
+                                                    @foreach ($dakwaan->barangBuktis as $barang_bukti)
+                                                        <li>{{ $barangBuktiIndex++ }}. {{ $barang_bukti->barang_bukti }} - {{ $barang_bukti->keterangan_barang_bukti }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </td>
+                        
+                                            <!-- Display Keputusan Barang Bukti dengan Nomor -->
+                                            <td class="px-4 py-3">
+                                                <ul>
+                                                    @php $keputusanBuktiIndex = 1; @endphp
+                                                    @foreach ($dakwaan->barangBuktis as $barang_bukti)
+                                                        <li>{{ $keputusanBuktiIndex++ }}. {{ $barang_bukti->keputusan_barang_bukti }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
+                        
                         <div class="py-4 px-3">
                             <div class="flex ">
                                 <div class="flex space-x-4 items-center mb-3">
@@ -100,4 +136,62 @@
             </section>
         </div>
     </div>
+    <h2>Daftar Semua Dakwaan</h2>
+
+    <table border="1" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Nomor Putusan</th>
+                <th>Tanggal Putusan</th>
+                <th>Pasal Didakwakan</th>
+                <th>Keputusan</th>
+                <th>Terdakwa</th>
+                <th>Barang Bukti</th>
+                <th>Keputusan Barang Bukti</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($dakwaans as $dakwaan)
+                <tr>
+                    <td rowspan="{{ max($dakwaan->terdakwaks->count(), $dakwaan->barangBuktis->count()) }}">
+                        {{ $dakwaan->nomor_putusan }}
+                    </td>
+                    <td rowspan="{{ max($dakwaan->terdakwaks->count(), $dakwaan->barangBuktis->count()) }}">
+                        {{ $dakwaan->tanggal_putusan }}
+                    </td>
+                    <td rowspan="{{ max($dakwaan->terdakwaks->count(), $dakwaan->barangBuktis->count()) }}">
+                        {{ $dakwaan->pasal_didakwakan }}
+                    </td>
+                    <td rowspan="{{ max($dakwaan->terdakwaks->count(), $dakwaan->barangBuktis->count()) }}">
+                        {{ $dakwaan->keputusan }}
+                    </td>
+
+                    <!-- Display terdakwa for the first row -->
+                    @if ($dakwaan->terdakwaks->isNotEmpty())
+                        <td>{{ $dakwaan->terdakwaks[0]->nama }}</td>
+                    @else
+                        <td>-</td>
+                    @endif
+
+                    <!-- Display barang bukti for the first row -->
+                    @if ($dakwaan->barangBuktis->isNotEmpty())
+                        <td>{{ $dakwaan->barangBuktis[0]->barang_bukti }} - {{ $dakwaan->barangBuktis[0]->keterangan_barang_bukti }}</td>
+                        <td>{{ $dakwaan->barangBuktis[0]->keputusan_barang_bukti }}</td>
+                    @else
+                        <td>-</td>
+                        <td>-</td>
+                    @endif
+                </tr>
+
+                <!-- Display additional terdakwa if more than one -->
+                @for ($i = 1; $i < max($dakwaan->terdakwaks->count(), $dakwaan->barangBuktis->count()); $i++)
+                    <tr>
+                        <td>{{ $dakwaan->terdakwaks[$i]->nama ?? '-' }}</td>
+                        <td>{{ $dakwaan->barangBuktis[$i]->barang_bukti ?? '-' }} - {{ $dakwaan->barangBuktis[$i]->keterangan_barang_bukti ?? '-' }}</td>
+                        <td>{{ $dakwaan->barangBuktis[$i]->keputusan_barang_bukti ?? '-' }}</td>
+                    </tr>
+                @endfor
+            @endforeach
+        </tbody>
+    </table>
 </div>

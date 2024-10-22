@@ -49,7 +49,7 @@ class Create extends Component
         $this->keputusan_barang_bukti = '';
     }
 
-    public function store()
+    public function submit()
     {
         // Validasi
         $this->validate([

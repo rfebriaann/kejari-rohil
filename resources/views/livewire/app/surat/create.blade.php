@@ -36,9 +36,9 @@
                                     </div>
                                     <div>
                                         <label for="">Tanggal</label>
-                                        <input  type="text"
+                                        <input  type="date"
                                         wire:model="tanggal_putusan"
-                                        class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
+                                        class="bg-[#2b2f3f]     mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
                                         placeholder="Tanggal" required="">
                                     </div>
                                     <div>
@@ -66,7 +66,7 @@
                                             <input  type="text"
                                             wire:model="nama_terdakwa"
                                             class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
-                                            placeholder="Nama Terdakwa" required="">
+                                            placeholder="Nama Terdakwa">
                                         </div>
                                         <div class="basis-1/3">
                                             <button type="button" wire:click="addTerdakwa" class="font-montserrat font-semibold text-gray-700 bg-[#FFFFFF] hover:bg-[#d2d2d2] focus:ring-4 focus:ring-blue-300 rounded-2xl text-sm px-5 py-2.5 focus:outline-none">Tambah Terdakwa</button> 
@@ -87,28 +87,28 @@
                                         <input  type="text"
                                         wire:model="barang_bukti"
                                         class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
-                                        placeholder="Nama Barang Bukti" required="">
+                                        placeholder="Nama Barang Bukti">
                                     </div>
                                     <div>
                                         <label for="">Keterangan Barang Bukti</label>
                                         <input  type="text"
                                         wire:model="keterangan_barang_bukti"
                                         class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
-                                        placeholder="Keterangan Barang Bukti" required="">
+                                        placeholder="Keterangan Barang Bukti">
                                     </div>
                                     <div>
                                         <label for="">No. Barang Bukti</label>
                                         <input  type="text"
                                         wire:model="nomor_register_barang_bukti"
                                         class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
-                                        placeholder="No. Register Barang Bukti" required="">
+                                        placeholder="No. Register Barang Bukti">
                                     </div>
                                     <div>
                                         <label for="">Keputusan</label>
                                         <input  type="text"
                                         wire:model="keputusan_barang_bukti"
                                         class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
-                                        placeholder="Keputusan Barang" required="">
+                                        placeholder="Keputusan Barang">
                                     </div>
                                     <div>
                                         <button type="button" wire:click="addBarangBukti" class="font-montserrat font-semibold text-gray-700 bg-[#FFFFFF] hover:bg-[#d2d2d2] focus:ring-4 focus:ring-blue-300 rounded-2xl text-sm px-5 py-2.5 focus:outline-none">Tambah</button>
@@ -120,7 +120,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="button" class="font-montserrat mx-10 font-semibold text-gray-700 bg-[#FFFFFF] hover:bg-[#d2d2d2] focus:ring-4 focus:ring-blue-300 rounded-2xl text-sm px-5 py-2.5 focus:outline-none m-4">Simpan Data</button>
+                            <button type="submit" class="font-montserrat mx-10 font-semibold text-gray-700 bg-[#FFFFFF] hover:bg-[#d2d2d2] focus:ring-4 focus:ring-blue-300 rounded-2xl text-sm px-5 py-2.5 focus:outline-none m-4">Simpan Data</button>
                         </form>
                     </div>
                 </div>

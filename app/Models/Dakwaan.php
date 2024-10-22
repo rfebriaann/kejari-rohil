@@ -7,22 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Dakwaan extends Model
 {
-    use HasFactory;
+    protected $fillable = ['nomor_putusan', 'tanggal_putusan', 'pasal_didakwakan', 'keputusan'];
 
-    // Izinkan atribut untuk mass assignment
-    protected $fillable = [
-        'nomor_putusan',
-        'tanggal_putusan',
-        'pasal_didakwakan',
-        'keputusan',
-    ];
-    public function terdakwa()
+    public function terdakwaks()
     {
-        return $this->belongsToMany(Terdakwa::class, 'dakwaan_terdakwa', 'nomor_putusan', 'terdakwa_id');
+        return $this->hasMany(Terdakwa::class);
     }
 
-    public function barangBukti()
+    public function barangBuktis()
     {
-        return $this->hasMany(BarangBukti::class, 'nomor_putusan', 'nomor_putusan');
+        return $this->hasMany(BarangBukti::class);
     }
 }

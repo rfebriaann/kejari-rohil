@@ -13,21 +13,24 @@ return new class extends Migration
     {
         if(!Schema::hasTable('barang_buktis')){
             Schema::create('barang_buktis', function (Blueprint $table) {
-                $table->id(); // Primary key
+                $table->id();
+                $table->foreignId('dakwaan_id')->constrained()->onDelete('cascade');
+                $table->string('barang_bukti');
+                $table->string('keterangan_barang_bukti');
                 $table->string('nomor_register_barang_bukti');
-                $table->text('keterangan_barang_bukti');
-                $table->unsignedBigInteger('nomor_putusan'); // Foreign key ke dakwaan
+                $table->string('keputusan_barang_bukti');
+                $table->timestamps();
+                
+                // $table->id(); // Primary key
+                // $table->string('nomor_register_barang_bukti');
+                // $table->text('keterangan_barang_bukti');
+                // $table->unsignedBigInteger('nomor_putusan'); // Foreign key ke dakwaan
 
-                // $table->foreignId('nomor_putusan_id')
-                //             // ->constrained()
-                //             ->onDelete('cascade');
-                // $table->timestamps();
-
-                // Foreign key constraint
-                $table->foreign('nomor_putusan')
-                        ->references('nomor_putusan')
-                        ->on('dakwaans')
-                        ->onDelete('cascade');
+                // // Foreign key constraint
+                // $table->foreign('nomor_putusan')
+                //         ->references('nomor_putusan')
+                //         ->on('dakwaans')
+                //         ->onDelete('cascade');
             });
         }
     }

@@ -7,15 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Terdakwa extends Model
 {
-    use HasFactory;
-
-    protected $fillable = [
-        'nama',
-        'nomor_putusan',
-    ];
+    protected $fillable = ['dakwaan_id', 'nama'];
 
     public function dakwaan()
     {
-        return $this->belongsToMany(Dakwaan::class, 'dakwaan_terdakwa', 'terdakwa_id', 'nomor_putusan');
+        return $this->belongsTo(Dakwaan::class);
     }
 }

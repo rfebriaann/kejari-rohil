@@ -1,11 +1,19 @@
 <div class="mx-20">
-    <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-[280px] h-screen transition-transform -translate-x-full sm:translate-x-0 p-10" aria-label="Sidebar">
-        <div class="bg-[#1F212D] flex flex-col justify-around items-center rounded-[40px] h-full w-full py-4 overflow-y-auto border border-[#1F212D]">
-            <div>
-                <a href="">
-                    <img class="object-cover size-36 p-4 rounded-3xl" src="{{ asset('storage/assets/img/logokejari.png') }}" alt="">
-                </a>
+    <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-[300px] h-screen transition-transform -translate-x-full sm:translate-x-0 p-10" aria-label="Sidebar">
+        <div class="bg-[#1E212D] flex flex-col justify-around items-center rounded-[40px] h-full w-full py-4 overflow-y-auto border border-[#1F212D]">
+            <div class="flex justify-center items-center p-4 gap-2">
+                <div>
+                    <a href="">
+                        <img class="object-cover size-20 rounded-3xl" src="{{ asset('storage/assets/img/logokejari.png') }}" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img class="object-cover size-20 rounded-3xl" src="{{ asset('storage/assets/img/logokejari.png') }}" alt="">
+                    </a>
+                </div>
             </div>
+            
             <div>
                 <ul class="space-y-2 font-medium">
                     <li>

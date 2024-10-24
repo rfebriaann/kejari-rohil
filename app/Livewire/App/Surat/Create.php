@@ -24,9 +24,11 @@ class Create extends Component
     
     public $nama_terdakwa;
     public $barang_bukti;
-    public $keterangan_barang_bukti;
+    public $jumlah;
+    public $amar_barang_bukti;
     public $nomor_register_barang_bukti;
-    public $keputusan_barang_bukti;
+    public $p48;
+    public $status;
 
     public function addTerdakwa()
     {
@@ -38,15 +40,19 @@ class Create extends Component
     {
         $this->barang_buktis[] = [
             'barang_bukti' => $this->barang_bukti,
-            'keterangan_barang_bukti' => $this->keterangan_barang_bukti,
+            'jumlah' => $this->jumlah,
+            'amar_barang_bukti' => $this->amar_barang_bukti,
             'nomor_register_barang_bukti' => $this->nomor_register_barang_bukti,
-            'keputusan_barang_bukti' => $this->keputusan_barang_bukti,
+            'p48' => $this->p48,
+            'status' => $this->status,
         ];
 
         $this->barang_bukti = '';
-        $this->keterangan_barang_bukti = '';
+        $this->jumlah = '';
+        $this->amar_barang_bukti = '';
         $this->nomor_register_barang_bukti = '';
-        $this->keputusan_barang_bukti = '';
+        $this->p48 = '';
+        $this->status = '';
     }
 
     public function submit()

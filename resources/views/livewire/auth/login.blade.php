@@ -50,7 +50,7 @@
             </div>
         </div>
         <div class="basis-1/2 bg-[#FF8552] w-full h-full rounded-[50px] overflow-hidden">
-                <img class="object-cover h-full w-full" src="https://lh3.googleusercontent.com/p/AF1QipMVi3ZfJXdS8kEBLYjU0mnY1hTiFLsv5vtS8bue=s1360-w1360-h1020" alt="">
+                <img class="object-cover h-full w-full" src="{{ asset('storage/assets/img/bg1.jpeg') }}" alt="">
                 {{-- <div class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent"></div> --}}
         </div>
     </div>

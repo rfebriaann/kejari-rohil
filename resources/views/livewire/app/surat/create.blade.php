@@ -1,11 +1,11 @@
 <div>
     <div class="p-4 rounded-lg dark:border-gray-700">
         <div class="relative mb-6 flex justify-between items-center">
-            <div>
+            {{-- <div>
                 <h1 class="text-4xl font-montserrat">
                     Hello again.. <strong class="text-[#DEF261]">{{ auth()->user()->name }}</strong>
                 </h1>
-            </div>
+            </div> --}}
             <div class="bg-cover rounded-[30px] bg-[#FF8653]">
                 <div class="bg-gradient-to-t from-[#FF9E75] py-2 px-6 rounded-[30px]">
                     <h1 class="font-bold font-montserrat text-3xl text-white">📒 Tambah Surat </h1>
@@ -24,10 +24,10 @@
                             <div class="alert alert-danger">{{ session('error') }}</div>
                         @endif
                         <form wire:submit.prevent="submit">
-                            <div class="flex flex-col d p-10 gap-6">
-                                <h1 class="text-xl font-montserrat font-semibold">Data Dakwaan</h1>
+                            <div class="flex flex-col d p-10 gap-6 w-full">
+                                <h1 class="text-xl font-montserrat font-semibold">Data Perkara</h1>
                                 <div class="flex gap-4 px-4 py-4 rounded-3xl border-2 border-dashed border-[#0d0e13] -mt-4">
-                                    <div>
+                                    <div class="basis-3/5">
                                         <label for="">Nomor Putusan</label>
                                         <input  type="text"
                                         wire:model="nomor_putusan"
@@ -80,43 +80,64 @@
                                 </div>
                             </div>
                             <div class="flex flex-col d px-10 -mt-4 pb-4 gap-4">
-                                <h1 class="text-xl font-montserrat font-semibold">Barang Bawaan</h1>
-                                <div class="flex gap-4 px-4 py-4 rounded-3xl border-2 border-dashed border-[#0d0e13] -mt-2 items-end">
-                                    <div>
-                                        <label for="">Nama Barang Bukti</label>
-                                        <input  type="text"
-                                        wire:model="barang_bukti"
-                                        class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
-                                        placeholder="Nama Barang Bukti">
-                                    </div>
-                                    <div>
-                                        <label for="">Keterangan Barang Bukti</label>
-                                        <input  type="text"
-                                        wire:model="keterangan_barang_bukti"
-                                        class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
-                                        placeholder="Keterangan Barang Bukti">
-                                    </div>
-                                    <div>
-                                        <label for="">No. Barang Bukti</label>
-                                        <input  type="text"
-                                        wire:model="nomor_register_barang_bukti"
-                                        class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
-                                        placeholder="No. Register Barang Bukti">
-                                    </div>
-                                    <div>
-                                        <label for="">Keputusan</label>
-                                        <input  type="text"
-                                        wire:model="keputusan_barang_bukti"
-                                        class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
-                                        placeholder="Keputusan Barang">
-                                    </div>
-                                    <div>
-                                        <button type="button" wire:click="addBarangBukti" class="font-montserrat font-semibold text-gray-700 bg-[#FFFFFF] hover:bg-[#d2d2d2] focus:ring-4 focus:ring-blue-300 rounded-2xl text-sm px-5 py-2.5 focus:outline-none">Tambah</button>
+                                <h1 class="text-xl font-montserrat font-semibold">Data Barang Bukti</h1>
+                                <div class="flex flex-col gap-4 px-4 py-4 rounded-3xl border-2 border-dashed border-[#0d0e13] -mt-2">
+                                    <div class="flex gap-4">
+                                        <div class="flex flex-col w-1/2">
+                                            <div class="">
+                                                <label for="">Nama Barang Bukti</label>
+                                                <input  type="text"
+                                                wire:model="barang_bukti"
+                                                class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
+                                                placeholder="Nama Barang Bukti">
+                                            </div>
+                                            <div class="">
+                                                <label for="">Jumlah</label>
+                                                <input  type="text"
+                                                wire:model="jumlah"
+                                                class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
+                                                placeholder="Jumlah barang bukti">
+                                            </div>
+                                            <div class="">
+                                                <label for="">Amar Putusan</label>
+                                                <input  type="text"
+                                                wire:model="amar_barang_bukti"
+                                                class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
+                                                placeholder="Amar putusan">
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col w-1/2">
+                                            <div class="">
+                                                <label for="">Nomor Register</label>
+                                                <input  type="text"
+                                                wire:model="nomor_register_barang_bukti"
+                                                class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
+                                                placeholder="Nomor Register Barang Bukti">
+                                            </div>
+                                            <div class="">
+                                                <label for="">P-48</label>
+                                                <input  type="text"
+                                                wire:model="p48"
+                                                class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
+                                                placeholder="Kode P-48">
+                                            </div>
+                                            <div class="">
+                                                <label for="">Status</label>
+                                                <select wire:model="status" class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start">
+                                                    <option value="">-- Pilih status --</option>
+                                                    <option value="Dapat Diambil">Dapat diambil</option>
+                                                    <option value="Tidak Dapat Diambil">Belum dapat diambil</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="flex mx-4">
                                         @foreach($barang_buktis as $barang_bukti)
-                                            <li>{{ $barang_bukti['barang_bukti'] }} - {{ $barang_bukti['keterangan_barang_bukti'] }}</li>
+                                            <span class="text-white font-medium font-montserrat italic">{{ $barang_bukti['barang_bukti'] }} - {{ $barang_bukti['status'] }},&nbsp</span>
                                         @endforeach
+                                    </div>
+                                    <div class="">
+                                        <button type="button" wire:click="addBarangBukti" class="font-montserrat font-semibold text-gray-700 bg-[#FFFFFF] hover:bg-[#d2d2d2] focus:ring-4 focus:ring-blue-300 rounded-2xl text-sm px-5 py-2.5 focus:outline-none">Tambah Barang Bukti</button>
                                     </div>
                                 </div>
                             </div>

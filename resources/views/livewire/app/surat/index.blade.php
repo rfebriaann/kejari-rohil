@@ -1,14 +1,14 @@
 <div>
     <div class="p-4 rounded-lg dark:border-gray-700">
         <div class="relative mb-6 flex justify-between items-center">
-            <div>
+            {{-- <div>
                 <h1 class="text-4xl font-montserrat">
                     Welcome, <strong class="text-[#DEF261]">{{ auth()->user()->name }}</strong>
                 </h1>
-            </div>
+            </div> --}}
             <div class="bg-cover rounded-[30px] bg-[#B78BFF]">
-                <div class="bg-gradient-to-t from-[#C9A9FF] py-4 px-4 rounded-[30px]">
-                    <h1 class="font-bold font-montserrat text-4xl text-white">🧐 Halaman Dakwaan </h1>
+                <div class="bg-gradient-to-t from-[#C9A9FF] py-2 px-6 rounded-[30px]">
+                    <h1 class="font-bold font-montserrat text-3xl text-white">📒 Halaman Surat </h1>
                 </div>
             </div>
         </div>
@@ -53,66 +53,96 @@
                             </div> --}}
                         </div>
                         <div class="overflow-x-auto">
-                            <h2 class="text-lg font-semibold mb-4">Daftar Semua Dakwaan</h2>
-                        
-                            <table class="min-w-full text-md text-left text-white dark:text-gray-400">
-                                <thead class="text-xs text-white uppercase bg-[#2b2f3f]">
+                            {{-- <h2 class="text-lg font-semibold mb-4">Daftar Semua Dakwaan</h2> --}}
+                            <table class="min-w-full divide-y divide-gray-200 text-sm font-montserrat">
+                                <thead class="text-xs text-white uppercase bg-[#1E212D]">
                                     <tr>
-                                        <th scope="col" class="px-4 py-3">#</th>
-                                        <th scope="col" class="px-4 py-3">Nomor Putusan</th>
-                                        <th scope="col" class="px-4 py-3">Tanggal Putusan</th>
-                                        <th scope="col" class="px-4 py-3">Pasal Didakwakan</th>
-                                        <th scope="col" class="px-4 py-3">Keputusan</th>
-                                        <th scope="col" class="px-4 py-3">Terdakwa</th>
-                                        <th scope="col" class="px-4 py-3">Barang Bukti</th>
-                                        <th scope="col" class="px-4 py-3">Keputusan Barang Bukti</th>
+                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">#</th>
+                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Nama Terdakwa</th>
+                                        <th class="px-2 md:px-32 py-3 text-center font-semibold uppercase">Pasal yang Didakwakan</th>
+                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">No. Putusan</th>
+                                        <th class="px-2 md:px-24 py-3 text-center font-semibold uppercase">Tanggal Putusan</th>
+                                        <th class="px-2 md:px-24 py-3 text-center font-semibold uppercase">Barang Bukti</th>
+                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Jumlah</th>
+                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Amar Putusan</th>
+                                        <th class="px-2 md:px-6  py-3 text-center font-semibold uppercase">Register Barang Bukti</th>
+                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase ">P-48</th>
+                                        <th class="px-2 md:px-28 py-3 text-center font-semibold uppercase" style="width: 150px;">Status</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    @php
-                                        $i = 1;
-                                    @endphp
-                                    @foreach ($dakwaans as $dakwaan)
-                                        <tr class="border-b dark:border-gray-200">
-                                            <td class="px-4 py-3">{{ $i++ }}</td>
-                                            <td class="px-4 py-3">{{ $dakwaan->nomor_putusan }}</td>
-                                            <td class="px-4 py-3">{{ \Carbon\Carbon::parse($dakwaan->tanggal_putusan)->translatedFormat('j F Y') }}</td>
-                                            <td class="px-4 py-3">{{ $dakwaan->pasal_didakwakan }}</td>
-                                            <td class="px-4 py-3">{{ $dakwaan->keputusan }}</td>
-                                            
-                                            <!-- Display Terdakwa dengan Nomor -->
-                                            <td class="px-4 py-3">
-                                                <ul>
-                                                    @php $terdakwaIndex = 1; @endphp
-                                                    @foreach ($dakwaan->terdakwaks as $terdakwa)
-                                                        <li>{{ $terdakwaIndex++ }}. {{ $terdakwa->nama }}</li>
-                                                    @endforeach
-                                                </ul>
-                                            </td>
-                        
-                                            <!-- Display Barang Bukti dengan Nomor -->
-                                            <td class="px-4 py-3">
-                                                <ul>
-                                                    @php $barangBuktiIndex = 1; @endphp
-                                                    @foreach ($dakwaan->barangBuktis as $barang_bukti)
-                                                        <li>{{ $barangBuktiIndex++ }}. {{ $barang_bukti->barang_bukti }} - {{ $barang_bukti->keterangan_barang_bukti }}</li>
-                                                    @endforeach
-                                                </ul>
-                                            </td>
-                        
-                                            <!-- Display Keputusan Barang Bukti dengan Nomor -->
-                                            <td class="px-4 py-3">
-                                                <ul>
-                                                    @php $keputusanBuktiIndex = 1; @endphp
-                                                    @foreach ($dakwaan->barangBuktis as $barang_bukti)
-                                                        <li>{{ $keputusanBuktiIndex++ }}. {{ $barang_bukti->keputusan_barang_bukti }}</li>
-                                                    @endforeach
-                                                </ul>
-                                            </td>
-                                        </tr>
+                                <tbody class="bg-white">
+                                    @foreach ($dakwaans as $i => $dakwaan)
+                                    <tr class="odd:bg-[#2B2F3F] even:bg-[#1e2232]">
+                                        <td class="px-2 md:px-6 py-4">{{ $i + 1 }}</td>
+                                        <td class="px-2 md:px-6 py-4">
+                                            @foreach ($dakwaan->terdakwaks as $terdakwa)
+                                                {{ $terdakwa->nama }}
+                                            @endforeach
+                                        </td>
+                                        <td class="px-2 md:px-6 py-4">
+                                            {{ $dakwaan->pasal_didakwakan }}
+                                        </td>
+                                        <td class="px-2 md:px-6 py-4">
+                                            {{ $dakwaan->nomor_putusan }}
+                                        </td>
+                                        <td class="px-2 md:px-6 py-4">
+                                            {{ \Carbon\Carbon::parse($dakwaan->tanggal_putusan)->translatedFormat('l, j F Y') }}
+                                        </td>
+                                        <td class="px-2 md:px-6 py-4">
+                                            <div class="flex flex-col gap-8 items-start justify-start">
+                                                @foreach ($dakwaan->barangBuktis as $barang_bukti)
+                                                <div>
+                                                    <span>{{ $barang_bukti->barang_bukti }}</span>
+                                                </div>
+                                                @endforeach
+                                            </div>
+                                        </td>
+                                        <td class="px-2 md:px-6 py-4">
+                                            <div class="flex flex-col justify-between gap-8">
+                                                @foreach ($dakwaan->barangBuktis as $barang_bukti)
+                                                <div>
+                                                    <span>{{ $barang_bukti->jumlah }}</span>
+                                                </div>
+                                                @endforeach
+                                            </div>
+                                        </td>
+                                        <td class="px-2 md:px-6 py-4">
+                                            <ul>
+                                                @foreach ($dakwaan->barangBuktis->unique('amar_barang_bukti') as $barang_bukti)
+                                                    <li>{{ $barang_bukti->amar_barang_bukti }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </td>
+                                        <td class="px-2 md:px-6 py-4">
+                                            <ul>
+                                                @foreach ($dakwaan->barangBuktis->unique('nomor_register_barang_bukti') as $barang_bukti)
+                                                    <li>{{ $barang_bukti->nomor_register_barang_bukti }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </td>
+                                        <td class="px-2 md:px-6 py-4 text-left">
+                                            <ul>
+                                                @foreach ($dakwaan->barangBuktis->unique('p48') as $barang_bukti)
+                                                    <li>{{ $barang_bukti->p48 }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </td>
+                                        <td class="px-2 md:px-6 py-4 text-center">
+                                            <ul>
+                                                @foreach ($dakwaan->barangBuktis->unique('status') as $barang_bukti)
+                                                    @if ($barang_bukti->status == "Dapat Diambil")
+                                                        <li><span class="px-2 py-2 bg-[#53A826] rounded-2xl">{{ $barang_bukti->status }}</span></li>
+                                                    @else
+                                                        <li><span class="px-2 py-2 bg-[#ff0040] rounded-2xl">{{ $barang_bukti->status }}</span></li>
+                                                    @endif
+                                                @endforeach
+                                            </ul>
+                                        </td>
+                                    </tr>
                                     @endforeach
                                 </tbody>
-                            </table>
+                            </table>                            
+                            
                         </div>
                         
                         <div class="py-4 px-3">
@@ -136,62 +166,4 @@
             </section>
         </div>
     </div>
-    <h2>Daftar Semua Dakwaan</h2>
-
-    <table border="1" cellpadding="10" cellspacing="0">
-        <thead>
-            <tr>
-                <th>Nomor Putusan</th>
-                <th>Tanggal Putusan</th>
-                <th>Pasal Didakwakan</th>
-                <th>Keputusan</th>
-                <th>Terdakwa</th>
-                <th>Barang Bukti</th>
-                <th>Keputusan Barang Bukti</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($dakwaans as $dakwaan)
-                <tr>
-                    <td rowspan="{{ max($dakwaan->terdakwaks->count(), $dakwaan->barangBuktis->count()) }}">
-                        {{ $dakwaan->nomor_putusan }}
-                    </td>
-                    <td rowspan="{{ max($dakwaan->terdakwaks->count(), $dakwaan->barangBuktis->count()) }}">
-                        {{ $dakwaan->tanggal_putusan }}
-                    </td>
-                    <td rowspan="{{ max($dakwaan->terdakwaks->count(), $dakwaan->barangBuktis->count()) }}">
-                        {{ $dakwaan->pasal_didakwakan }}
-                    </td>
-                    <td rowspan="{{ max($dakwaan->terdakwaks->count(), $dakwaan->barangBuktis->count()) }}">
-                        {{ $dakwaan->keputusan }}
-                    </td>
-
-                    <!-- Display terdakwa for the first row -->
-                    @if ($dakwaan->terdakwaks->isNotEmpty())
-                        <td>{{ $dakwaan->terdakwaks[0]->nama }}</td>
-                    @else
-                        <td>-</td>
-                    @endif
-
-                    <!-- Display barang bukti for the first row -->
-                    @if ($dakwaan->barangBuktis->isNotEmpty())
-                        <td>{{ $dakwaan->barangBuktis[0]->barang_bukti }} - {{ $dakwaan->barangBuktis[0]->keterangan_barang_bukti }}</td>
-                        <td>{{ $dakwaan->barangBuktis[0]->keputusan_barang_bukti }}</td>
-                    @else
-                        <td>-</td>
-                        <td>-</td>
-                    @endif
-                </tr>
-
-                <!-- Display additional terdakwa if more than one -->
-                @for ($i = 1; $i < max($dakwaan->terdakwaks->count(), $dakwaan->barangBuktis->count()); $i++)
-                    <tr>
-                        <td>{{ $dakwaan->terdakwaks[$i]->nama ?? '-' }}</td>
-                        <td>{{ $dakwaan->barangBuktis[$i]->barang_bukti ?? '-' }} - {{ $dakwaan->barangBuktis[$i]->keterangan_barang_bukti ?? '-' }}</td>
-                        <td>{{ $dakwaan->barangBuktis[$i]->keputusan_barang_bukti ?? '-' }}</td>
-                    </tr>
-                @endfor
-            @endforeach
-        </tbody>
-    </table>
 </div>

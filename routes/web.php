@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', App\Livewire\Guest\Homepage::class)->name('homepage');
 
 // auth
-Route::get('/login', App\Livewire\Auth\Login::class)->name('login');
+Route::get('/entry', App\Livewire\Auth\Login::class)->name('login');
 Route::get('/logout', [App\Livewire\Auth\Logout::class, 'logout'])->name('logout');
 
 // superadmin

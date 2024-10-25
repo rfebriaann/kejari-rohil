@@ -17,10 +17,6 @@ return new class extends Migration
                 $table->foreignId('dakwaan_id')->constrained()->onDelete('cascade');
                 $table->string('barang_bukti');
                 $table->integer('jumlah');
-                $table->string('amar_barang_bukti');
-                $table->string('nomor_register_barang_bukti');
-                $table->string('p48');
-                $table->string('status');
                 $table->timestamps();
                 
                 // $table->id(); // Primary key

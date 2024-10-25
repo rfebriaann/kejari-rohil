@@ -48,13 +48,6 @@
                                         class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
                                         placeholder="Pasal Didakwakan" required="">
                                     </div>
-                                    <div>
-                                        <label for="">Keputusan</label>
-                                        <input  type="text"
-                                        wire:model="keputusan"
-                                        class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
-                                        placeholder="Keputusan" required="">
-                                    </div>
                                 </div>
                             </div>
                             <div class="flex flex-col d px-10 -mt-4 pb-10 gap-6">
@@ -68,15 +61,12 @@
                                             class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
                                             placeholder="Nama Terdakwa">
                                         </div>
-                                        <div class="basis-1/3">
-                                            <button type="button" wire:click="addTerdakwa" class="font-montserrat font-semibold text-gray-700 bg-[#FFFFFF] hover:bg-[#d2d2d2] focus:ring-4 focus:ring-blue-300 rounded-2xl text-sm px-5 py-2.5 focus:outline-none">Tambah Terdakwa</button> 
-                                        </div>
                                     </div>
-                                    <div class="flex mx-4">
+                                    {{-- <div class="flex mx-4">
                                         @foreach($terdakwaks as $terdakwa)
                                             <span class="text-white font-medium font-montserrat italic">{{ $terdakwa['nama'] }}, &nbsp</span>
                                         @endforeach
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                             <div class="flex flex-col d px-10 -mt-4 pb-4 gap-4">
@@ -91,6 +81,9 @@
                                                 class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
                                                 placeholder="Nama Barang Bukti">
                                             </div>
+                                            
+                                        </div>
+                                        <div class="flex flex-col w-1/2">
                                             <div class="">
                                                 <label for="">Jumlah</label>
                                                 <input  type="text"
@@ -98,6 +91,20 @@
                                                 class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
                                                 placeholder="Jumlah barang bukti">
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex mx-4">
+                                        @foreach($barang_buktis as $barang_bukti)
+                                            <span class="text-white font-medium font-montserrat italic">{{ $barang_bukti['barang_bukti'] }} - {{ $barang_bukti['jumlah'] }},&nbsp</span>
+                                        @endforeach
+                                    </div>
+                                    <div class="">
+                                        <button type="button" wire:click="addBarangBukti" class="font-montserrat font-semibold text-gray-700 bg-[#FFFFFF] hover:bg-[#d2d2d2] focus:ring-4 focus:ring-blue-300 rounded-2xl text-sm px-5 py-2.5 focus:outline-none">Tambah Barang Bukti</button>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-4 px-4 py-4 rounded-3xl border-2 border-dashed border-[#0d0e13] -mt-2">
+                                    <div class="flex gap-9">
+                                        <div class="flex flex-col w-1/2 gap-4">
                                             <div class="">
                                                 <label for="">Amar Putusan</label>
                                                 <input  type="text"
@@ -105,8 +112,6 @@
                                                 class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
                                                 placeholder="Amar putusan">
                                             </div>
-                                        </div>
-                                        <div class="flex flex-col w-1/2">
                                             <div class="">
                                                 <label for="">Nomor Register</label>
                                                 <input  type="text"
@@ -114,6 +119,8 @@
                                                 class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
                                                 placeholder="Nomor Register Barang Bukti">
                                             </div>
+                                        </div>
+                                        <div class="flex flex-col w-1/2 gap-4">
                                             <div class="">
                                                 <label for="">P-48</label>
                                                 <input  type="text"
@@ -126,18 +133,10 @@
                                                 <select wire:model="status" class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start">
                                                     <option value="">-- Pilih status --</option>
                                                     <option value="Dapat Diambil">Dapat diambil</option>
-                                                    <option value="Tidak Dapat Diambil">Belum dapat diambil</option>
+                                                    <option value="Belum Dapat Diambil">Belum dapat diambil</option>
                                                 </select>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="flex mx-4">
-                                        @foreach($barang_buktis as $barang_bukti)
-                                            <span class="text-white font-medium font-montserrat italic">{{ $barang_bukti['barang_bukti'] }} - {{ $barang_bukti['status'] }},&nbsp</span>
-                                        @endforeach
-                                    </div>
-                                    <div class="">
-                                        <button type="button" wire:click="addBarangBukti" class="font-montserrat font-semibold text-gray-700 bg-[#FFFFFF] hover:bg-[#d2d2d2] focus:ring-4 focus:ring-blue-300 rounded-2xl text-sm px-5 py-2.5 focus:outline-none">Tambah Barang Bukti</button>
                                     </div>
                                 </div>
                             </div>

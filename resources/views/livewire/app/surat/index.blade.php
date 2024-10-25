@@ -107,36 +107,35 @@
                                             </div>
                                         </td>
                                         <td class="px-2 md:px-6 py-4">
-                                            <ul>
+                                            {{ $dakwaan->amar_barang_bukti }}
+                                            {{-- <ul>
                                                 @foreach ($dakwaan->barangBuktis->unique('amar_barang_bukti') as $barang_bukti)
                                                     <li>{{ $barang_bukti->amar_barang_bukti }}</li>
                                                 @endforeach
-                                            </ul>
+                                            </ul> --}}
                                         </td>
                                         <td class="px-2 md:px-6 py-4">
-                                            <ul>
+                                            {{ $dakwaan->nomor_register_barang_bukti }}
+                                            {{-- <ul>
                                                 @foreach ($dakwaan->barangBuktis->unique('nomor_register_barang_bukti') as $barang_bukti)
                                                     <li>{{ $barang_bukti->nomor_register_barang_bukti }}</li>
                                                 @endforeach
-                                            </ul>
+                                            </ul> --}}
                                         </td>
                                         <td class="px-2 md:px-6 py-4 text-left">
-                                            <ul>
+                                            {{ $dakwaan->p48 }}
+                                            {{-- <ul>
                                                 @foreach ($dakwaan->barangBuktis->unique('p48') as $barang_bukti)
                                                     <li>{{ $barang_bukti->p48 }}</li>
                                                 @endforeach
-                                            </ul>
+                                            </ul> --}}
                                         </td>
                                         <td class="px-2 md:px-6 py-4 text-center">
-                                            <ul>
-                                                @foreach ($dakwaan->barangBuktis->unique('status') as $barang_bukti)
-                                                    @if ($barang_bukti->status == "Dapat Diambil")
-                                                        <li><span class="px-2 py-2 bg-[#53A826] rounded-2xl">{{ $barang_bukti->status }}</span></li>
-                                                    @else
-                                                        <li><span class="px-2 py-2 bg-[#ff0040] rounded-2xl">{{ $barang_bukti->status }}</span></li>
-                                                    @endif
-                                                @endforeach
-                                            </ul>
+                                            @if ($dakwaan->status == "Dapat Diambil")
+                                                <span class="px-2 py-2 bg-[#53A826] rounded-2xl">{{ $dakwaan->status }}</span>
+                                            @else
+                                                <span class="px-2 py-2 bg-[#ff0040] rounded-2xl">{{ $dakwaan->status }}</span>
+                                            @endif
                                         </td>
                                     </tr>
                                     @endforeach

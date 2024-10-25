@@ -17,9 +17,9 @@ class Create extends Component
     public $nomor_putusan;
     public $tanggal_putusan;
     public $pasal_didakwakan;
-    public $keputusan;
     
-    public $terdakwaks = [];
+    public $terdakwaks;
+    // public $terdakwaks = [];
     public $barang_buktis = [];
     
     public $nama_terdakwa;
@@ -41,18 +41,10 @@ class Create extends Component
         $this->barang_buktis[] = [
             'barang_bukti' => $this->barang_bukti,
             'jumlah' => $this->jumlah,
-            'amar_barang_bukti' => $this->amar_barang_bukti,
-            'nomor_register_barang_bukti' => $this->nomor_register_barang_bukti,
-            'p48' => $this->p48,
-            'status' => $this->status,
         ];
 
         $this->barang_bukti = '';
         $this->jumlah = '';
-        $this->amar_barang_bukti = '';
-        $this->nomor_register_barang_bukti = '';
-        $this->p48 = '';
-        $this->status = '';
     }
 
     public function submit()
@@ -62,9 +54,11 @@ class Create extends Component
             'nomor_putusan' => 'required|string',
             'tanggal_putusan' => 'required|date',
             'pasal_didakwakan' => 'required|string',
-            'keputusan' => 'required|string',
-            'terdakwaks' => 'required|array|min:1',
+            'nama_terdakwa' => 'required|string',
             'barang_buktis' => 'required|array|min:1',
+            'amar_barang_bukti' => 'required',
+            'p48' => 'required',
+            'status' => 'required',
         ]);
 
         // Simpan data dakwaan
@@ -72,13 +66,17 @@ class Create extends Component
             'nomor_putusan' => $this->nomor_putusan,
             'tanggal_putusan' => $this->tanggal_putusan,
             'pasal_didakwakan' => $this->pasal_didakwakan,
-            'keputusan' => $this->keputusan,
+            'amar_barang_bukti' => $this->amar_barang_bukti,
+            'nomor_register_barang_bukti' => $this->nomor_register_barang_bukti,
+            'p48' => $this->p48,
+            'status' => $this->status,
         ]);
 
         // Simpan data terdakwak
-        foreach ($this->terdakwaks as $terdakwa) {
-            $dakwaan->terdakwaks()->create($terdakwa);
-        }
+        $dakwaan->terdakwaks()->create(['nama' => $this->nama_terdakwa]);
+        // foreach ($this->terdakwaks as $terdakwa) {
+        //     $dakwaan->terdakwaks()->create($terdakwa);
+        // }
 
         // Simpan data barang bukti
         foreach ($this->barang_buktis as $barang_bukti) {

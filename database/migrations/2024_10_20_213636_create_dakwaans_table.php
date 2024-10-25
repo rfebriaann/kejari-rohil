@@ -16,7 +16,10 @@ return new class extends Migration
             $table->string('nomor_putusan');
             $table->date('tanggal_putusan');
             $table->string('pasal_didakwakan');
-            $table->string('keputusan');
+            $table->string('amar_barang_bukti');
+            $table->string('nomor_register_barang_bukti');
+            $table->string('p48');
+            $table->string('status');
             $table->timestamps();
         });
         

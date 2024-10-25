@@ -7,7 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Dakwaan extends Model
 {
-    protected $fillable = ['nomor_putusan', 'tanggal_putusan', 'pasal_didakwakan', 'keputusan'];
+    protected $fillable = ['nomor_putusan', 
+    'tanggal_putusan', 
+    'pasal_didakwakan',
+    'amar_barang_bukti', 
+    'nomor_register_barang_bukti',
+    'p48',
+    'status',
+];
 
     public function terdakwaks()
     {

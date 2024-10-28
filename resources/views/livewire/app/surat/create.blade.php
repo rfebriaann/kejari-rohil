@@ -1,13 +1,13 @@
 <div>
-    <div class="p-4 rounded-lg dark:border-gray-700">
+    <div class="p-4 rounded-lg">
         <div class="relative mb-6 flex justify-between items-center">
             {{-- <div>
                 <h1 class="text-4xl font-montserrat">
                     Hello again.. <strong class="text-[#DEF261]">{{ auth()->user()->name }}</strong>
                 </h1>
             </div> --}}
-            <div class="bg-cover rounded-[30px] bg-[#FF8653]">
-                <div class="bg-gradient-to-t from-[#FF9E75] py-2 px-6 rounded-[30px]">
+            <div class="bg-cover rounded-[30px] bg-[#5B3018]">
+                <div class="bg-gradient-to-t from-[#5B3018] py-2 px-6 rounded-[30px]">
                     <h1 class="font-bold font-montserrat text-3xl text-white">📒 Tambah Surat </h1>
                 </div>
             </div>
@@ -15,7 +15,7 @@
         <div>
             <section class="mt-4 ">
                 <div class="max-w-screen-xl p-2 mx-auto lg:px-1">
-                    <div class="bg-[#1E212D] w-full relative sm:rounded-[30px] overflow-hidden ">
+                    <div class="bg-[#ab7743] border-2 border-[#5b3018]  w-full relative sm:rounded-[30px] overflow-hidden" style="box-shadow: 0px 10px 0 rgba(87, 46, 23, 1);">
                         @if (session()->has('success'))
                             <div class="alert alert-success">{{ session('success') }}</div>
                         @endif
@@ -31,21 +31,21 @@
                                         <label for="">Nomor Putusan</label>
                                         <input  type="text"
                                         wire:model="nomor_putusan"
-                                        class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
+                                        class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
                                         placeholder="Nomor Putusan" required="">
                                     </div>
                                     <div>
                                         <label for="">Tanggal</label>
                                         <input  type="date"
                                         wire:model="tanggal_putusan"
-                                        class="bg-[#2b2f3f]     mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
+                                        class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2  text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
                                         placeholder="Tanggal" required="">
                                     </div>
                                     <div>
                                         <label for="">Pasal Didakwakan</label>
                                         <input  type="text"
                                         wire:model="pasal_didakwakan"
-                                        class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
+                                        class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
                                         placeholder="Pasal Didakwakan" required="">
                                     </div>
                                 </div>
@@ -58,7 +58,7 @@
                                             <label for="">Nama Terdakwa</label>
                                             <input  type="text"
                                             wire:model="nama_terdakwa"
-                                            class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
+                                            class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
                                             placeholder="Nama Terdakwa">
                                         </div>
                                     </div>
@@ -78,7 +78,7 @@
                                                 <label for="">Nama Barang Bukti</label>
                                                 <input  type="text"
                                                 wire:model="barang_bukti"
-                                                class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
+                                                class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
                                                 placeholder="Nama Barang Bukti">
                                             </div>
                                             
@@ -88,7 +88,7 @@
                                                 <label for="">Jumlah</label>
                                                 <input  type="text"
                                                 wire:model="jumlah"
-                                                class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
+                                                class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
                                                 placeholder="Jumlah barang bukti">
                                             </div>
                                         </div>
@@ -109,14 +109,14 @@
                                                 <label for="">Amar Putusan</label>
                                                 <input  type="text"
                                                 wire:model="amar_barang_bukti"
-                                                class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
+                                                class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
                                                 placeholder="Amar putusan">
                                             </div>
                                             <div class="">
                                                 <label for="">Nomor Register</label>
                                                 <input  type="text"
                                                 wire:model="nomor_register_barang_bukti"
-                                                class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
+                                                class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
                                                 placeholder="Nomor Register Barang Bukti">
                                             </div>
                                         </div>
@@ -125,12 +125,12 @@
                                                 <label for="">P-48</label>
                                                 <input  type="text"
                                                 wire:model="p48"
-                                                class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
+                                                class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
                                                 placeholder="Kode P-48">
                                             </div>
                                             <div class="">
                                                 <label for="">Status</label>
-                                                <select wire:model="status" class="bg-[#2b2f3f] mt-2 p-2 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start">
+                                                <select wire:model="status" class="bg-[#b7957f] mt-2 p-2 border-2  border-[#5B3018] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start">
                                                     <option value="">-- Pilih status --</option>
                                                     <option value="Dapat Diambil">Dapat diambil</option>
                                                     <option value="Belum Dapat Diambil">Belum dapat diambil</option>

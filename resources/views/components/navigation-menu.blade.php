@@ -1,4 +1,4 @@
-<nav id="navbar" class="flex justify-center h-[70px] md:h-[100px] bg-transparent fixed px-0 left-0 z-20 w-full top-0 transition-all duration-300 ease-in-out">
+<nav id="navbar" class="flex justify-center h-[70px] md:h-[100px] bg-transparent fixed px-0 left-0 z-20 w-full top-0 transition-all duration-300 ease-in-out text-black">
     <div class="w-full max-w-[1240px] flex items-center justify-between mx-auto">
         <div class="flex items-center mx-10">
             <img class="size-28" src="{{ asset('storage/assets/img/istanadata-logo.png') }}" class="h-12 mr-3" alt="Logo" />
@@ -6,21 +6,21 @@
         </div>
         <!-- Mobile menu button -->
         <div class="md:hidden mx-10">
-            <button id="menu-btn" class="text-white focus:outline-none">
+            <button id="menu-btn" class="focus:outline-none">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
             </button>
         </div>
         <!-- Navigation items (desktop view) -->
-        <div id="menu" class="hidden md:flex md:items-center md:w-auto w-full justify-end text-white space-x-8">
+        <div id="menu" class="hidden md:flex md:items-center md:w-auto w-full justify-end space-x-8">
             <a href="" class="font-semibold text-lg cursor-pointer font-montserrat">Beranda</a>
             <div class="relative group">
                 <p class="font-semibold text-lg cursor-pointer font-montserrat">Desa Cantik</p>
                 <!-- Dropdown Menu for Desa Cantik -->
                 <div class="absolute w-40 hidden group-hover:block bg-[#1d2730] p-4 mt-0 space-y-2 rounded-xl shadow-lg">
                     <div>
-                        <a href="" class="text-white font-montserrat cursor-pointer">Statistik</a>
+                        <a href="" class="font-montserrat cursor-pointer">Statistik</a>
                     </div>
                 </div>
             </div>
@@ -29,11 +29,11 @@
                 <!-- Dropdown Menu for Data -->
                 <div class="absolute w-40 hidden group-hover:block bg-[#1d2730] p-4 mt-0 space-y-2 rounded-xl shadow-lg">
                     <div>
-                        <a href="" class="text-white font-montserrat cursor-pointer">Indikator</a>
+                        <a href="" class="font-montserrat cursor-pointer">Indikator</a>
                     </div>
                     <div class="border-b border-[#fff] h-1"></div>
                     <div>
-                        <a href="" class="text-white font-montserrat cursor-pointer">Komoditas</a>
+                        <a href="" class="text-black font-montserrat cursor-pointer">Komoditas</a>
                     </div>
                 </div>
             </div>
@@ -42,11 +42,11 @@
                 <!-- Dropdown Menu for Data -->
                 <div class="absolute w-40 hidden group-hover:block bg-[#1d2730] p-4 mt-0 space-y-2 rounded-xl shadow-lg">
                     <div>
-                        <a href="" class="text-white font-montserrat cursor-pointer">Publikasi</a>
+                        <a href="" class="text-black font-montserrat cursor-pointer">Publikasi</a>
                     </div>
                     <div class="border-b border-[#fff] h-1"></div>
                     <div>
-                        <a href="" class="text-white font-montserrat cursor-pointer">Infografis</a>
+                        <a href="" class="text-black font-montserrat cursor-pointer">Infografis</a>
                     </div>
                 </div>
             </div>
@@ -119,10 +119,13 @@
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar.classList.add('bg-[#101820]');
+            navbar.classList.remove('text-black');
+            navbar.classList.add('text-white');
             navbar.classList.remove('bg-transparent');
         } else {
             navbar.classList.add('bg-transparent');
             navbar.classList.remove('bg-[#101820]');
+            navbar.classList.remove('text-white');
         }
     });
 </script>

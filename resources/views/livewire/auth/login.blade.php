@@ -49,9 +49,13 @@
                 </div>
             </div>
         </div>
-        <div class="basis-1/2 bg-[#FF8552] w-full h-full rounded-[50px] overflow-hidden">
-                <img class="object-cover h-full w-full" src="{{ asset('storage/assets/img/bg1.jpeg') }}" alt="">
-                {{-- <div class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent"></div> --}}
+        <<div class="relative basis-1/2 bg-[#FF8552] w-full h-full rounded-[50px] overflow-hidden">
+            <img class="object-cover h-full w-full" src="{{ asset('storage/assets/img/bg-1.jpeg') }}" alt="">
+            <div class="absolute flex justify-center inset-0 bg-gradient-to-t from-black/100 to-transparent h-full w-full z-10">
+                <div class="p-20">
+                    <img class="object-cover size-28 rounded-3xl" src="{{ asset('storage/assets/img/logoppapng.png') }}" alt="">
+                </div>
+            </div>
         </div>
     </div>
 

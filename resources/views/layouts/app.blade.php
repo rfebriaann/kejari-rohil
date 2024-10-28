@@ -21,7 +21,7 @@
         }
     </style>
 </head>
-<body>
+<body class="bg-[#FBF3DD]">
     <x-navigation-menu/>
     {{ $slot }}
     <x-footer-menu/>

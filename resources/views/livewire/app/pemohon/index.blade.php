@@ -8,7 +8,7 @@
             </div> --}}
             <div class="bg-cover rounded-[30px] bg-[#5B3018]">
                 <div class="bg-gradient-to-t from-[#5B3018] py-2 px-6 rounded-[30px]">
-                    <h1 class="font-bold font-montserrat text-3xl text-white">📒 Halaman Surat </h1>
+                    <h1 class="font-bold font-montserrat text-3xl text-white">📒 Halaman Pemohon </h1>
                 </div>
             </div>
         </div>
@@ -70,7 +70,7 @@
                                         <th class="px-2 md:px-28 py-3 text-center font-semibold uppercase" style="width: 150px;">Status</th>
                                     </tr>
                                 </thead>
-                                <tbody class="bg-white">
+                                {{-- <tbody class="bg-white">
                                     @foreach ($dakwaans as $i => $dakwaan)
                                     <tr class="odd:bg-[#a36d37] even:bg-[#855a2f]">
                                         <td class="px-2 md:px-6 py-4">{{ $i + 1 }}</td>
@@ -108,27 +108,12 @@
                                         </td>
                                         <td class="px-2 md:px-6 py-4">
                                             {{ $dakwaan->amar_barang_bukti }}
-                                            {{-- <ul>
-                                                @foreach ($dakwaan->barangBuktis->unique('amar_barang_bukti') as $barang_bukti)
-                                                    <li>{{ $barang_bukti->amar_barang_bukti }}</li>
-                                                @endforeach
-                                            </ul> --}}
                                         </td>
                                         <td class="px-2 md:px-6 py-4">
                                             {{ $dakwaan->nomor_register_barang_bukti }}
-                                            {{-- <ul>
-                                                @foreach ($dakwaan->barangBuktis->unique('nomor_register_barang_bukti') as $barang_bukti)
-                                                    <li>{{ $barang_bukti->nomor_register_barang_bukti }}</li>
-                                                @endforeach
-                                            </ul> --}}
                                         </td>
                                         <td class="px-2 md:px-6 py-4 text-left">
                                             {{ $dakwaan->p48 }}
-                                            {{-- <ul>
-                                                @foreach ($dakwaan->barangBuktis->unique('p48') as $barang_bukti)
-                                                    <li>{{ $barang_bukti->p48 }}</li>
-                                                @endforeach
-                                            </ul> --}}
                                         </td>
                                         <td class="px-2 md:px-6 py-4 text-center">
                                             @if ($dakwaan->status == "Dapat Diambil")
@@ -139,13 +124,13 @@
                                         </td>
                                     </tr>
                                     @endforeach
-                                </tbody>
+                                </tbody> --}}
                             </table>                            
                             
                         </div>
                         
                         <div class="py-4 px-3">
-                            <div class="flex ">
+                            {{-- <div class="flex ">
                                 <div class="flex space-x-4 items-center mb-3">
                                     <label class="w-32 text-sm font-medium text-white">Per Page</label>
                                     <select
@@ -157,7 +142,7 @@
                                         <option value="100">100</option>
                                     </select>
                                 </div>
-                            </div>
+                            </div> --}}
                             {{-- {{$indikators->links()}} --}}
                         </div>
                     </div>

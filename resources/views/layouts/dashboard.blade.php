@@ -9,7 +9,7 @@
         @vite('resources/css/app.css')
         @stack('styles')
     </head>
-    <body class="bg-[#0C0E16] text-white">
+    <body class="bg-[#FBF3DD] text-black">
         <x-side-menu />
         <div class="sm:ml-72 m-16 text-white">
             {{$slot}}

@@ -16,4 +16,8 @@ Route::middleware('auth', 'role:Super Admin')->group(function() {
     // surat
     Route::get('/surat', App\Livewire\App\Surat\Index::class)->name('app.surat.index');
     Route::get('/surat/tambahsurat', App\Livewire\App\Surat\Create::class)->name('app.surat.create');
+
+    // pemohon
+    Route::get('/pemohon', App\Livewire\App\Pemohon\Index::class)->name('app.pemohon.index');
+
 });

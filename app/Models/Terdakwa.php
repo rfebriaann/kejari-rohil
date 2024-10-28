@@ -13,4 +13,9 @@ class Terdakwa extends Model
     {
         return $this->belongsTo(Dakwaan::class);
     }
+    
+    public function dataPemohon()
+    {
+        return $this->hasMany(DataPemohon::class, 'terdakwa_id');
+    }
 }

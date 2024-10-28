@@ -15,7 +15,7 @@ return new class extends Migration
             Schema::create('data_pemohons', function (Blueprint $table) {
                 $table->id();
                 $table->date('tanggal_pengambilan');
-                $table->foreignId('terdakwa_id')->constrained('terdakwa')->onDelete('cascade'); // Pastikan nama tabel sesuai
+                $table->foreignId('terdakwa_id')->constrained()->onDelete('cascade'); // Pastikan nama tabel sesuai
                 $table->string('nama_pemohon');
                 $table->string('nik', 16);
                 $table->string('tempat_lahir');

@@ -7,8 +7,9 @@
                         <img class="size-32" src="{{ asset('storage/assets/img/logokejari.png') }}" alt="">
                     </div>
                     <div class="w-48">
-                        <h1 class="text-2xl font-montserrat font-semibold">
-                            Kejaksaan Negeri Rokan Hilir
+                        <h1 class="text-2xl font-montserrat font-bold block">
+                            Kejaksaan Negeri
+                            <span class="">Rokan Hilir</span>
                         </h1>
                     </div>
                 </div>
@@ -40,7 +41,7 @@
                         <div>
                             <button 
                             type="submit"
-                            class="w-full bg-[#B68BFF] text-white py-3 rounded-xl shadow-md font-montserrat font-medium">Masuk!</button>
+                            class="w-full bg-[#964A27] text-white py-3 rounded-xl shadow-md font-montserrat font-semibold">Masuk!</button>
                         </div>
                     </form>
                 </div>
@@ -49,12 +50,12 @@
                 </div>
             </div>
         </div>
-        <<div class="relative basis-1/2 bg-[#FF8552] w-full h-full rounded-[50px] overflow-hidden">
-            <img class="object-cover h-full w-full" src="{{ asset('storage/assets/img/bg-1.jpeg') }}" alt="">
+        <div class="relative basis-1/2 bg-[#FF8552] w-full h-full rounded-[60px] overflow-hidden">
+            <img class="object-cover h-full w-full overflow-hidden" src="{{ asset('storage/assets/img/bg3.png') }}" alt="">
             <div class="absolute flex justify-center inset-0 bg-gradient-to-t from-black/100 to-transparent h-full w-full z-10">
-                <div class="p-20">
-                    <img class="object-cover size-28 rounded-3xl" src="{{ asset('storage/assets/img/logoppapng.png') }}" alt="">
-                </div>
+                {{-- <div class="p-20">
+                    <img class="object-cover size-28 rounded-2xl" src="{{ asset('storage/assets/img/logoppapng.png') }}" alt="">
+                </div> --}}
             </div>
         </div>
     </div>

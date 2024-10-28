@@ -1,4 +1,4 @@
-<div class="py-20 bg-[#111820]">
+<div class="py-20 bg-[#5B3018]">
     <div class="flex flex-col lg:flex-row lg:justify-between items-center mx-4 md:mx-20 lg:mx-40">
         <div class="mb-10 lg:mb-0">
             <img class="w-32 lg:w-40" src="{{ asset('storage/assets/img/istanadata-logo.png') }}" alt="Animated SVG">

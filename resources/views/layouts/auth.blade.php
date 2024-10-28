@@ -13,7 +13,7 @@
     @vite('resources/css/app.css')
     @stack('styles')
 </head>
-<body class="bg-[#0C0E16] text-white">
+<body class="bg-[#FBF3DD] text-[#964A27]">
     {{$slot}}
 </body>
 <script>

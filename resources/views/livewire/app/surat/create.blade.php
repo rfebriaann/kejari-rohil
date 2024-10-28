@@ -8,7 +8,7 @@
             </div> --}}
             <div class="bg-cover rounded-[30px] bg-[#5B3018]">
                 <div class="bg-gradient-to-t from-[#5B3018] py-2 px-6 rounded-[30px]">
-                    <h1 class="font-bold font-montserrat text-3xl text-white">📒 Tambah Surat </h1>
+                    <h1 class="font-bold font-montserrat text-3xl text-white">📒 Tambah Data Perkara </h1>
                 </div>
             </div>
         </div>

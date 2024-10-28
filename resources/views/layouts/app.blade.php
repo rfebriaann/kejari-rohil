@@ -15,11 +15,11 @@
     
     @vite('resources/css/app.css')
     @stack('styles')
-    <style>
+    {{-- <style>
         ::selection {
             background: #F56833;
         }
-    </style>
+    </style> --}}
 </head>
 <body class="bg-[#FBF3DD]">
     <x-navigation-menu/>

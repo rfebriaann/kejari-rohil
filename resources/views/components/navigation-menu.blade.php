@@ -118,13 +118,13 @@
     
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.classList.add('bg-[#101820]');
+            navbar.classList.add('bg-[#6d3914]');
             navbar.classList.remove('text-black');
             navbar.classList.add('text-white');
             navbar.classList.remove('bg-transparent');
         } else {
             navbar.classList.add('bg-transparent');
-            navbar.classList.remove('bg-[#101820]');
+            navbar.classList.remove('bg-[#6d3914]');
             navbar.classList.remove('text-white');
         }
     });

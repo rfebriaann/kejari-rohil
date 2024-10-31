@@ -58,73 +58,72 @@
                                 <thead class="text-xs text-white uppercase bg-[#855a2f]">
                                     <tr>
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">#</th>
+                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Tanggal Pengambilan</th>
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Nama Terdakwa</th>
-                                        <th class="px-2 md:px-32 py-3 text-center font-semibold uppercase">Pasal yang Didakwakan</th>
-                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">No. Putusan</th>
-                                        <th class="px-2 md:px-24 py-3 text-center font-semibold uppercase">Tanggal Putusan</th>
-                                        <th class="px-2 md:px-24 py-3 text-center font-semibold uppercase">Barang Bukti</th>
-                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Jumlah</th>
-                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Amar Putusan</th>
-                                        <th class="px-2 md:px-6  py-3 text-center font-semibold uppercase">Register Barang Bukti</th>
-                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase ">P-48</th>
-                                        <th class="px-2 md:px-28 py-3 text-center font-semibold uppercase" style="width: 150px;">Status</th>
+                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Nama Pemohon</th>
+                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">NIK</th>
+                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Tempat Lahir</th>
+                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Tanggal Lahir</th>
+                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Jenis Kelamin</th>
+                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Alamat</th>
+                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase ">Agama</th>
+                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase ">Status Kawin</th>
+                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase ">Pekerjaan</th>
+                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase ">Nomor HP</th>
                                     </tr>
                                 </thead>
-                                {{-- <tbody class="bg-white">
-                                    @foreach ($dakwaans as $i => $dakwaan)
+                                <tbody class="bg-white">
+                                    @foreach ($pemohons as $i => $pemohon)
                                     <tr class="odd:bg-[#a36d37] even:bg-[#855a2f]">
                                         <td class="px-2 md:px-6 py-4">{{ $i + 1 }}</td>
                                         <td class="px-2 md:px-6 py-4">
-                                            @foreach ($dakwaan->terdakwaks as $terdakwa)
-                                                {{ $terdakwa->nama }}
-                                            @endforeach
+                                            {{ \Carbon\Carbon::parse($pemohon->tanggal_pengambilan)->translatedFormat('l, j F Y')}}
                                         </td>
                                         <td class="px-2 md:px-6 py-4">
-                                            {{ $dakwaan->pasal_didakwakan }}
+                                            {{ $pemohon->terdakwa->nama }}
                                         </td>
                                         <td class="px-2 md:px-6 py-4">
-                                            {{ $dakwaan->nomor_putusan }}
+                                            {{ $pemohon->nama_pemohon }}
                                         </td>
                                         <td class="px-2 md:px-6 py-4">
-                                            {{ \Carbon\Carbon::parse($dakwaan->tanggal_putusan)->translatedFormat('l, j F Y') }}
+                                            {{ $pemohon->nik }}
                                         </td>
                                         <td class="px-2 md:px-6 py-4">
+                                            {{ $pemohon->tempat_lahir }}
+                                        </td>
+                                        <td class="px-2 md:px-6 py-4">
+                                            {{ \Carbon\Carbon::parse($pemohon->tanggal_lahir)->translatedFormat('l, j F Y')}}
+                                        </td>
+                                        <td class="px-2 md:px-6 py-4">
+                                            {{ $pemohon->jenis_kelamin }}
+                                        </td>
+                                        <td class="px-2 md:px-6 py-4">
+                                            {{ $pemohon->alamat }}
+                                        </td>
+                                        <td class="px-2 md:px-6 py-4">
+                                            {{ $pemohon->agama }}
+                                        </td>
+                                        <td class="px-2 md:px-6 py-4">
+                                            {{ $pemohon->status_perkawinan }}
+                                        </td>
+                                        <td class="px-2 md:px-6 py-4">
+                                            {{ $pemohon->pekerjaan }}
+                                        </td>
+                                        <td class="px-2 md:px-6 py-4">
+                                            {{ $pemohon->nomor_hp }}
+                                        </td>
+                                        {{-- <td class="px-2 md:px-6 py-4">
                                             <div class="flex flex-col gap-8 items-start justify-start">
-                                                @foreach ($dakwaan->barangBuktis as $barang_bukti)
+                                                @foreach ($pemohon->barangBuktis as $barang_bukti)
                                                 <div>
                                                     <span>{{ $barang_bukti->barang_bukti }}</span>
                                                 </div>
                                                 @endforeach
                                             </div>
-                                        </td>
-                                        <td class="px-2 md:px-6 py-4">
-                                            <div class="flex flex-col justify-between gap-8">
-                                                @foreach ($dakwaan->barangBuktis as $barang_bukti)
-                                                <div>
-                                                    <span>{{ $barang_bukti->jumlah }}</span>
-                                                </div>
-                                                @endforeach
-                                            </div>
-                                        </td>
-                                        <td class="px-2 md:px-6 py-4">
-                                            {{ $dakwaan->amar_barang_bukti }}
-                                        </td>
-                                        <td class="px-2 md:px-6 py-4">
-                                            {{ $dakwaan->nomor_register_barang_bukti }}
-                                        </td>
-                                        <td class="px-2 md:px-6 py-4 text-left">
-                                            {{ $dakwaan->p48 }}
-                                        </td>
-                                        <td class="px-2 md:px-6 py-4 text-center">
-                                            @if ($dakwaan->status == "Dapat Diambil")
-                                                <span class="px-2 py-2 bg-[#53A826] rounded-2xl">{{ $dakwaan->status }}</span>
-                                            @else
-                                                <span class="px-2 py-2 bg-[#ff0040] rounded-2xl">{{ $dakwaan->status }}</span>
-                                            @endif
-                                        </td>
+                                        </td> --}}
                                     </tr>
                                     @endforeach
-                                </tbody> --}}
+                                </tbody>
                             </table>                            
                             
                         </div>

@@ -1,7 +1,7 @@
-<nav id="navbar" class="flex justify-center h-[70px] md:h-[100px] bg-transparent fixed px-0 left-0 z-20 w-full top-0 transition-all duration-300 ease-in-out text-black">
+<nav id="navbar" class="flex justify-center h-[50px] md:h-[80px] bg-transparent fixed px-0 left-0 z-20 w-full top-0 transition-all duration-300 ease-in-out text-black">
     <div class="w-full max-w-[1240px] flex items-center justify-between mx-auto">
         <div class="flex items-center mx-10">
-            <img class="size-28" src="{{ asset('storage/assets/img/istanadata-logo.png') }}" class="h-12 mr-3" alt="Logo" />
+            <img class="size-14" src="{{ asset('storage/assets/img/logokejari.png') }}" class="h-12 mr-3" alt="Logo" />
             {{-- <span class="self-center text-2xl text-white font-semibold font-montserrat">Istana Data</span> --}}
         </div>
         <!-- Mobile menu button -->
@@ -14,8 +14,9 @@
         </div>
         <!-- Navigation items (desktop view) -->
         <div id="menu" class="hidden md:flex md:items-center md:w-auto w-full justify-end space-x-8">
-            <a href="" class="font-semibold text-lg cursor-pointer font-montserrat">Beranda</a>
-            <div class="relative group">
+            <a href="{{route('homepage')}}" class="font-semibold text-lg cursor-pointer font-montserrat">Beranda</a>
+            <a href="{{route('guest.pemohon.index')}}" class="font-semibold text-lg cursor-pointer font-montserrat">Form Permohonan</a>
+            {{-- <div class="relative group">
                 <p class="font-semibold text-lg cursor-pointer font-montserrat">Desa Cantik</p>
                 <!-- Dropdown Menu for Desa Cantik -->
                 <div class="absolute w-40 hidden group-hover:block bg-[#1d2730] p-4 mt-0 space-y-2 rounded-xl shadow-lg">
@@ -23,8 +24,8 @@
                         <a href="" class="font-montserrat cursor-pointer">Statistik</a>
                     </div>
                 </div>
-            </div>
-            <div class="relative group">
+            </div> --}}
+            {{-- <div class="relative group">
                 <p class="font-semibold text-lg cursor-pointer font-montserrat">Data</p>
                 <!-- Dropdown Menu for Data -->
                 <div class="absolute w-40 hidden group-hover:block bg-[#1d2730] p-4 mt-0 space-y-2 rounded-xl shadow-lg">
@@ -36,8 +37,8 @@
                         <a href="" class="text-black font-montserrat cursor-pointer">Komoditas</a>
                     </div>
                 </div>
-            </div>
-            <div class="relative group">
+            </div> --}}
+            {{-- <div class="relative group">
                 <p class="font-semibold text-lg cursor-pointer font-montserrat">Dokumen</p>
                 <!-- Dropdown Menu for Data -->
                 <div class="absolute w-40 hidden group-hover:block bg-[#1d2730] p-4 mt-0 space-y-2 rounded-xl shadow-lg">
@@ -48,7 +49,7 @@
                     <div>
                         <a href="" class="text-black font-montserrat cursor-pointer">Infografis</a>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

@@ -7,6 +7,7 @@ use App\Models\Terdakwa;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
 use Livewire\Attributes\Layout;
+use Livewire\Attributes\Validate;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -16,27 +17,49 @@ class Index extends Component
     use WithFileUploads;
     #[Layout('layouts.app')]
 
+    // #[Validate('required', message: 'Nama terdakwa wajib di isi!')]
     public $nama_terdakwa = '';
     public $terdakwaId;
     public $suggestions = [];
 
+    #[Validate('required', message: 'Nama pemohon wajib di isi!')]
     public $nama_pemohon;
-    public $nik;
-    public $tempat_lahir;
-    public $tanggal_lahir;
-    public $jenis_kelamin;
-    public $alamat;
-    public $agama;
-    public $status_perkawinan;
-    public $pekerjaan;
-    public $nomor_hp;
-    public $ktp_pemohon;
-    public $ktp_pemberi;
-    public $dokumen_pendukung;
 
-    // protected $rules = [
-    //     'ktp_pemohon' => 'required|mimes:pdf,doc,docx|max:2048', // hanya menerima PDF atau DOC dengan max 2MB
-    // ];
+    #[Validate('required', message: 'NIK wajib di isi!')]
+    public $nik;
+
+    #[Validate('required', message: 'Tempat lahir wajib di isi!')]
+    public $tempat_lahir;
+
+    #[Validate('required', message: 'Tanggal lahir wajib di isi!')]
+    public $tanggal_lahir;
+
+    #[Validate('required', message: 'Jenis Kelamin wajib di isi!')]
+    public $jenis_kelamin;
+
+    #[Validate('required', message: 'Alamat wajib di isi!')]
+    public $alamat;
+
+    #[Validate('required', message: 'Agama wajib di isi!')]
+    public $agama;
+
+    #[Validate('required', message: 'Status perkawinan wajib di isi!')]
+    public $status_perkawinan;
+
+    #[Validate('required', message: 'Pekerjaan wajib di isi!')]
+    public $pekerjaan;
+
+    #[Validate('required', message: 'Nomor HP wajib di isi!')]
+    public $nomor_hp;
+
+    #[Validate('required|mimes:pdf,doc,docx|max:2048', message: 'KTP pemohon wajib di unggah!')]
+    public $ktp_pemohon;
+
+    #[Validate('mimes:pdf,doc,docx|max:2048')]
+    public $ktp_pemberi;
+
+    #[Validate('mimes:pdf,doc,docx|max:2048')]
+    public $dokumen_pendukung;
 
     public function searchTerdakwa()
     {
@@ -47,18 +70,18 @@ class Index extends Component
             ->toArray();
     }
 
-    public function selectSuggestion($id, $nama)
+    public function selectSuggestion($id, $name)
     {
-        $this->terdakwaId = $id; // Simpan id terdakwa yang dipilih
-        $this->nama_terdakwa = $nama; // Simpan nama terdakwa yang dipilih
-        $this->suggestions = []; // Kosongkan saran setelah memilih
+        $this->nama_terdakwa = $name; // Mengisi nama ke input
+        $this->terdakwaId = $id; // Menyimpan ID terdakwa (opsional)
+        $this->suggestions = []; // Mengosongkan saran setelah dipilih
     }
 
     public function submit()
     {
         // $this->validate(); // Validasi file
 
-        // Simpan file ke direktori storage/app/documents
+        // // Simpan file ke direktori storage/app/documents
         // $ktp_path = $this->ktp_pemohon->store('documents');
         // $ktp_pemberi_path = $this->ktp_pemberi->store('documents');
         // $dokumen_pendukung_path = $this->dokumen_pendukung->store('documents');
@@ -102,7 +125,7 @@ class Index extends Component
             // 'ktp_pemberi_kuasa_path' => $ktp_pemberi_path,
             // 'dokumen_pendukung_path' => $dokumen_pendukung_path,
         ]);
-
+        
         $this->sendNotificationToFonnte();
         // Tampilkan pesan sukses
         session()->flash('message', 'Dokumen berhasil diunggah dan disimpan di database!');
@@ -111,8 +134,8 @@ class Index extends Component
     private function sendNotificationToFonnte()
     {
         $token = "S5bJrbeynjfVvexibk2C";
-        // $target = "6285161762468";
-        $target = "6281266941924";
+        $target = "6285161762468";
+        // $target = "6281266941924";
 
         $curl = curl_init();
 

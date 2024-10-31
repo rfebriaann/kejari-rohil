@@ -4,14 +4,14 @@
             <div class="flex justify-center items-center p-4 gap-2">
                 <div>
                     <a href="">
-                        <img class="object-cover size-20 rounded-3xl" src="{{ asset('storage/assets/img/logokejari.png') }}" alt="">
+                        <img class="object-cover size-24 rounded-3xl" src="{{ asset('storage/assets/img/logokejari.png') }}" alt="">
                     </a>
                 </div>
-                <div>
+                {{-- <div>
                     <a href="">
                         <img class="object-cover size-20 rounded-3xl" src="{{ asset('storage/assets/img/logoppapng.png') }}" alt="">
                     </a>
-                </div>
+                </div> --}}
             </div>
             
             <div>

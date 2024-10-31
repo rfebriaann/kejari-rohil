@@ -33,16 +33,19 @@
                                 <div class="flex flex-col gap-4 px-4 py-4 rounded-3xl border-2 border-dashed border-[#0d0e13] -mt-4 items-start">
                                     <div class="flex w-full items-end gap-5">
                                         <div class="w-full relative">
-                                            <label for="">Nama Terdakwa</label>
+                                            <span class="text-red-800">
+                                                *
+                                                <label for="" class="text-black">Nama Terdakwa</label>
+                                            </span>
                                             <input type="text"
                                                 wire:model="nama_terdakwa"
                                                 wire:keyup="searchTerdakwa"
                                                 class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 placeholder:text-white"
                                                 placeholder="Nama Terdakwa">
-                                
+                                                <span class="mx-5 font-montserrat font-medium italic text-sm text-red-800">@error('nama_terdakwa') {{ $message }} @enderror</span>
                                             <!-- Dropdown Suggestions -->
                                             @if(!empty($suggestions))
-                                                <div class="absolute z-10 w-full bg-[#5B3018] text-white rounded-xl mt-1">
+                                                <div class="absolute z-10 w-full bg-[#5B3018] text-white rounded-xl -mt-4">
                                                     @foreach($suggestions as $suggestion)
                                                         <div wire:click="selectSuggestion('{{ $suggestion['id'] }}', '{{ $suggestion['nama'] }}')"
                                                             class="p-2 cursor-pointer hover:bg-[#BB91FF] rounded-lg">

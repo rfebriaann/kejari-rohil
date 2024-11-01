@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 // guest
 Route::get('/', App\Livewire\Guest\Homepage::class)->name('homepage');
 Route::get('/pemohon', App\Livewire\Guest\Pemohon\Index::class)->name('guest.pemohon.index');
+Route::get('/dataperkara', App\Livewire\Guest\Perkara\Index::class)->name('guest.perkara.index');
 
 // auth
 Route::get('/entry', App\Livewire\Auth\Login::class)->name('login');

@@ -16,7 +16,7 @@
         <div id="menu" class="hidden md:flex md:items-center md:w-auto w-full justify-end space-x-8">
             <a href="{{route('homepage')}}" class="font-semibold text-lg cursor-pointer font-montserrat">Beranda</a>
             <a href="{{route('guest.pemohon.index')}}" class="font-semibold text-lg cursor-pointer font-montserrat">Form Permohonan</a>
-            <a href="{{route('guest.pemohon.index')}}" class="font-semibold text-lg cursor-pointer font-montserrat">Data Perkara</a>
+            <a href="{{route('guest.perkara.index')}}" class="font-semibold text-lg cursor-pointer font-montserrat">Data Perkara</a>
             {{-- <div class="relative group">
                 <p class="font-semibold text-lg cursor-pointer font-montserrat">Desa Cantik</p>
                 <!-- Dropdown Menu for Desa Cantik -->

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\App\Surat;
+namespace App\Livewire\Guest\Perkara;
 
 use App\Models\Dakwaan;
 use Livewire\Attributes\Layout;
@@ -10,26 +10,26 @@ use Livewire\WithPagination;
 class Index extends Component
 {
     use WithPagination;
-    #[Layout('layouts.dashboard')]
+    #[Layout('layouts.app')]
 
     public $search = ''; // Properti untuk pencarian
     public $perPage = 10; // Properti untuk mengatur jumlah data per halaman
     public $dateRange; // Rentang tanggal dalam format 'start_date - end_date'
 
-    public function updatingSearch()
-    {
-        $this->resetPage(); // Reset halaman ke 1 setiap kali pencarian berubah
-    }
+    // public function updatingSearch()
+    // {
+    //     $this->resetPage(); // Reset halaman ke 1 setiap kali pencarian berubah
+    // }
 
-    public function updatingPerPage()
-    {
-        $this->resetPage(); // Reset halaman ke 1 setiap kali perPage berubah
-    }
+    // public function updatingPerPage()
+    // {
+    //     $this->resetPage(); // Reset halaman ke 1 setiap kali perPage berubah
+    // }
 
-    public function updatingDateRange()
-    {
-        $this->resetPage(); // Reset halaman saat dateRange berubah
-    }
+    // public function updatingDateRange()
+    // {
+    //     $this->resetPage(); // Reset halaman saat dateRange berubah
+    // }
 
     public function render()
     {
@@ -43,8 +43,8 @@ class Index extends Component
             $query->whereBetween('created_at', [$startDate, $endDate]);
         }
         $dakwaans = $query->paginate($this->perPage);
-        return view('livewire.app.surat.index', [
-            'dakwaans' => $dakwaans
+        return view('livewire.guest.perkara.index', [
+            'dakwaans' => $dakwaans,
         ]);
     }
 }

@@ -16,6 +16,7 @@
                             <a href="" class="font-montserrat font-semibold px-4 py-2 rounded-3xl bg-white w-1/2 text-center" style="box-shadow: 0px 5px 0 rgb(211, 211, 211);">Download Surat Kuasa</a>
                         </div> --}}
                     </div>
+                    <button wire:click="export">Export to Excel</button>
                 </div>
                 <div class="basis-2/3">
                     <div>
@@ -36,6 +37,27 @@
                                                 wire:model.live = 'search'
                                                 class="bg-[#b7957f] border-2 border-[#5B3018] text-white text-sm rounded-2xl block w-full pl-10 p-2 placeholder-white"
                                                 placeholder="Search" required="">
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-5">
+                                        <div>
+                                            <label class="text-white font-montserrat text-sm" for="month">Bulan :</label>
+                                            <select wire:model.live="month" id="month" class="bg-[#b7957f] border-2 border-[#5B3018] text-white text-sm rounded-2xl block w-full pl-10 p-2 placeholder-white">
+                                                <option value="">-- Select Month --</option>
+                                                @foreach(range(1, 12) as $m)
+                                                    <option value="{{ $m }}">{{ date('F', mktime(0, 0, 0, $m, 1)) }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+
+                                        <div>
+                                            <label class="text-white font-montserrat text-sm" for="year">Tahun :</label>
+                                            <select wire:model.live="year" id="year" class="bg-[#b7957f] border-2 border-[#5B3018] text-white text-sm rounded-2xl block w-full pl-10 p-2 placeholder-white">
+                                                <option value="">-- Select Year --</option>
+                                                @foreach(range(date('Y'), date('Y') - 10) as $y)
+                                                    <option value="{{ $y }}">{{ $y }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -154,12 +176,13 @@
                                             </select>
                                         </div>
                                     </div>
-                                    {{-- {{$indikators->links()}} --}}
+                                    {{$dakwaans->links()}}
                                 </div>
                             </div>
                         </section>
                     </div>
                 </div>
+            </div>
         </div>
     </div>
 </div>

@@ -8,10 +8,6 @@
                 <div>
                     <h2 class="font-montserrat font-semibold text-white">Beranda</h2>
                 </div>
-{{--                 
-                <div>
-                    <p class="font-montserrat text-white">Desa Cantik</p>
-                </div> --}}
             </div>
             <div class="flex flex-col gap-5">
                 <div>
@@ -21,22 +17,14 @@
                     {{-- <p class="font-montserrat text-white">Desa Cantik</p> --}}
                 </div>
             </div>
-            {{-- <div class="flex flex-col gap-5">
-                <div>
-                    <h2 class="font-montserrat font-semibold text-white">Data</h2>
-                </div>
-                <div>
-                    <p class="font-montserrat text-white">Desa Cantik</p>
-                </div>
-            </div>
             <div class="flex flex-col gap-5">
                 <div>
-                    <h2 class="font-montserrat font-semibold text-white">Dokumen</h2>
+                    <h2 class="font-montserrat font-semibold text-white">Data Perkara</h2>
                 </div>
                 <div>
-                    <p class="font-montserrat text-white">Dokumen</p>
+                    {{-- <p class="font-montserrat text-white">Desa Cantik</p> --}}
                 </div>
-            </div> --}}
+            </div>
         </div>
     </div>
     {{-- <div wire:ignore.self class="flex items-center justify-center">

@@ -16,7 +16,7 @@
                             <a href="" class="font-montserrat font-semibold px-4 py-2 rounded-3xl bg-white w-1/2 text-center" style="box-shadow: 0px 5px 0 rgb(211, 211, 211);">Download Surat Kuasa</a>
                         </div>
                     </div>
-                    <div class="basis-1/3 bg-cover bg-gradient-to-t " style="background-image: url('storage/assets/img/bg1.jpeg')">
+                    <div class="basis-1/3 bg-cover bg-gradient-to-t " style="background-image: url('storage/assets/img/bg-1.jpeg')">
                         <div class="bg-cover bg-gradient-to-r from-[#5B3018] w-full h-full">
                             {{-- <img class="object-cover h-full w-full overflow-hidden" src="{{ asset('storage/assets/img/bg2.png') }}" alt=""> --}}
                         </div>
@@ -29,7 +29,6 @@
                         <div>
                             <div class="flex flex-col d px-10 -mt-4 pb-10 gap-6">
                                 <h1 class="text-xl font-montserrat font-semibold">Nama Terdakwa</h1>
-                                
                                 <div class="flex flex-col gap-4 px-4 py-4 rounded-3xl border-2 border-dashed border-[#0d0e13] -mt-4 items-start">
                                     <div class="flex w-full items-end gap-5">
                                         <div class="w-full relative">

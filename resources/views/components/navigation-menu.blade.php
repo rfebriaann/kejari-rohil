@@ -1,7 +1,7 @@
 <nav id="navbar" class="flex justify-center h-[50px] md:h-[80px] bg-transparent fixed px-0 left-0 z-20 w-full top-0 transition-all duration-300 ease-in-out text-black">
     <div class="w-full max-w-[1240px] flex items-center justify-between mx-auto">
         <div class="flex items-center mx-10">
-            <img class="size-14" src="{{ asset('storage/assets/img/logokejari.png') }}" class="h-12 mr-3" alt="Logo" />
+            <img class="sm:size-10 md:size-14" src="{{ asset('storage/assets/img/logokejari.png') }}" class="h-12 mr-3" alt="Logo" />
             {{-- <span class="self-center text-2xl text-white font-semibold font-montserrat">Istana Data</span> --}}
         </div>
         <!-- Mobile menu button -->
@@ -56,33 +56,24 @@
     </div>
 
     <!-- Fullscreen Mobile Menu -->
-    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-[#101820] text-white hidden z-50">
+    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-[#6d3914] text-white hidden z-50">
         <div class="flex justify-between items-center px-4 mx-6">
             <div class="flex items-center">
-                <img src="" class="h-12 mr-3" alt="Logo" />
+                <img class="sm:size-10 md:size-14 sm:mt-2" src="{{ asset('storage/assets/img/logokejari.png') }}" class="h-12 mr-3" alt="Logo" />
                 {{-- <span class="self-center text-2xl text-white font-semibold font-montserrat">Istana Data</span> --}}
             </div>
             <button id="close-menu" class="text-white text-3xl focus:outline-none">×</button>
         </div>
         <div class="flex flex-col items-center justify-center h-full space-y-6">
-            <p class="text-xl font-semibold">Beranda</p>
             <div class="relative">
-                <p class="text-xl font-semibold cursor-pointer" id="desa-menu-mobile">Desa Cantik</p>
+                <a href="{{route('homepage')}}" class="font-semibold text-lg cursor-pointer font-montserrat">Beranda</a>
                 <!-- Dropdown Mobile for Desa Cantik -->
-                <div id="desa-dropdown-mobile" class="hidden flex flex-col space-y-2 mt-2">
-                    <p class="text-white cursor-pointer">Profil Desa</p>
-                    <p class="text-white cursor-pointer">Program Desa</p>
-                </div>
             </div>
             <div class="relative">
-                <p class="text-xl font-semibold cursor-pointer" id="data-menu-mobile">Data</p>
+                <a href="{{route('guest.pemohon.index')}}" class="font-semibold text-lg cursor-pointer font-montserrat">Form Permohonan</a>
                 <!-- Dropdown Mobile for Data -->
-                <div id="data-dropdown-mobile" class="hidden flex flex-col space-y-2 mt-2">
-                    <p class="text-white cursor-pointer">Statistik Data</p>
-                    <p class="text-white cursor-pointer">Pemetaan Data</p>
-                </div>
             </div>
-            <p class="text-xl font-semibold">Dokumen</p>
+            <a href="{{route('guest.perkara.index')}}" class="font-semibold text-lg cursor-pointer font-montserrat">Data Perkara</a>
         </div>
     </div>
 </nav>

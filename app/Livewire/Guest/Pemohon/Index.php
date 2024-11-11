@@ -6,6 +6,7 @@ use App\Models\DataPemohon;
 use App\Models\Terdakwa;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
@@ -14,6 +15,7 @@ use Livewire\WithFileUploads;
 class Index extends Component
 {
     // Amarangganafedira1!
+    use LivewireAlert;
     use WithFileUploads;
     #[Layout('layouts.app')]
 
@@ -81,12 +83,12 @@ class Index extends Component
     {
         // $this->validate(); // Validasi file
 
-        // // Simpan file ke direktori storage/app/documents
+        // // // Simpan file ke direktori storage/app/documents
         // $ktp_path = $this->ktp_pemohon->store('documents');
         // $ktp_pemberi_path = $this->ktp_pemberi->store('documents');
         // $dokumen_pendukung_path = $this->dokumen_pendukung->store('documents');
 
-        // Simpan path ke database
+        // // Simpan path ke database
         // DataPemohon::create([
         //     'tanggal_pengambilan' => Carbon::now(),
         //     'terdakwa_id' => $this->terdakwaId,
@@ -126,9 +128,14 @@ class Index extends Component
             // 'dokumen_pendukung_path' => $dokumen_pendukung_path,
         ]);
         
-        $this->sendNotificationToFonnte();
+        // $this->sendNotificationToFonnte();
         // Tampilkan pesan sukses
-        session()->flash('message', 'Dokumen berhasil diunggah dan disimpan di database!');
+        $this->alert('success', 'Data berhasil di kirim', [
+            'position' => 'center',
+            'timer' => 1000,
+            'toast' => true,
+            'timerProgressBar' => true,
+        ]);
     }
 
     private function sendNotificationToFonnte()

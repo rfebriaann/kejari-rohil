@@ -30,6 +30,9 @@
             alert('Name updated to: ' + event.detail.newName);
         })
     </script>
+    <script src="{{ asset('vendor/livewire-alert/livewire-alert.js') }}"></script> 
+    <x-livewire-alert::flash />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     <script src="https://cdn.datatables.net/v/bs4/dt-1.13.6/datatables.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

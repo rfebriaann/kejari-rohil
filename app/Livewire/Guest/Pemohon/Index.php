@@ -21,9 +21,15 @@ class Index extends Component
 
     // #[Validate('required', message: 'Nama terdakwa wajib di isi!')]
     public $nama_terdakwa = '';
-    public $terdakwaId;
     public $suggestions = [];
 
+
+    #[Validate('required', message: 'Nama terdakwa wajib di isi!')]
+    public $terdakwaId;
+
+    #[Validate('required', message: 'Tanggal pengambilan wajib di isi!')]
+    public $tanggal_pengambilan;
+    
     #[Validate('required', message: 'Nama pemohon wajib di isi!')]
     public $nama_pemohon;
 
@@ -57,10 +63,10 @@ class Index extends Component
     #[Validate('required|mimes:pdf,doc,docx|max:2048', message: 'KTP pemohon wajib di unggah!')]
     public $ktp_pemohon;
 
-    #[Validate('mimes:pdf,doc,docx|max:2048')]
+    #[Validate('nullable|mimes:pdf,doc,docx|max:2048')]
     public $ktp_pemberi;
 
-    #[Validate('mimes:pdf,doc,docx|max:2048')]
+    #[Validate('nullable|mimes:pdf,doc,docx|max:2048')]
     public $dokumen_pendukung;
 
     public function searchTerdakwa()
@@ -81,52 +87,52 @@ class Index extends Component
 
     public function submit()
     {
-        // $this->validate(); // Validasi file
+        $this->validate(); // Validasi file
 
-        // // // Simpan file ke direktori storage/app/documents
-        // $ktp_path = $this->ktp_pemohon->store('documents');
-        // $ktp_pemberi_path = $this->ktp_pemberi->store('documents');
-        // $dokumen_pendukung_path = $this->dokumen_pendukung->store('documents');
+        // // Simpan file ke direktori storage/app/documents
+        $ktp_path = $this->ktp_pemohon->store('documents');
+        $ktp_pemberi_path = $this->ktp_pemberi ? $this->ktp_pemberi->store('documents') : null;
+        $dokumen_pendukung_path = $this->dokumen_pendukung ? $this->dokumen_pendukung->store('documents') : null;
 
-        // // // Simpan path ke database
+        // // Simpan path ke database
+        DataPemohon::create([
+            'tanggal_pengambilan' => $this->tanggal_pengambilan,
+            'terdakwa_id' => $this->terdakwaId,
+            'nama_pemohon' => $this->nama_pemohon,
+            'nik' => $this->nik,
+            'tempat_lahir' => $this->tempat_lahir,
+            'tanggal_lahir' => $this->tanggal_lahir,
+            'jenis_kelamin' => $this->jenis_kelamin,
+            'alamat' => $this->alamat,
+            'agama' => $this->agama,
+            'status_perkawinan' => $this->status_perkawinan,
+            'pekerjaan' => $this->pekerjaan,
+            'nomor_hp' => $this->nomor_hp,
+            'ktp_pemohon_path' => $ktp_path,
+            'ktp_pemberi_kuasa_path' => $ktp_pemberi_path,
+            'dokumen_pendukung_path' => $dokumen_pendukung_path,
+        ]);
+
         // DataPemohon::create([
         //     'tanggal_pengambilan' => Carbon::now(),
         //     'terdakwa_id' => $this->terdakwaId,
         //     'nama_pemohon' => $this->nama_pemohon,
-        //     'nik' => $this->nik,
-        //     'tempat_lahir' => $this->tempat_lahir,
+        //     'nik' => "0812625172671",
+        //     'tempat_lahir' => "siak",
         //     'tanggal_lahir' => Carbon::now(),
-        //     'jenis_kelamin' => $this->jenis_kelamin,
-        //     'alamat' => $this->alamat,
-        //     'agama' => $this->agama,
-        //     'status_perkawinan' => $this->status_perkawinan,
-        //     'pekerjaan' => $this->pekerjaan,
-        //     'nomor_hp' => $this->nomor_hp,
-        //     'ktp_pemohon_path' => $ktp_path,
-        //     'ktp_pemberi_kuasa_path' => $ktp_pemberi_path,
-        //     'dokumen_pendukung_path' => $dokumen_pendukung_path,
+        //     'jenis_kelamin' => "Laki-laki",
+        //     'alamat' => "Siak",
+        //     'agama' => "Islam",
+        //     'status_perkawinan' => "Sudah Menikah",
+        //     'pekerjaan' => "Ngoding aja",
+        //     'nomor_hp' => "08125125712",
+        //     'ktp_pemohon_path' => null,
+        //     'ktp_pemberi_kuasa_path' => null,
+        //     'dokumen_pendukung_path' => null,
+        //     // 'ktp_pemohon_path' => $ktp_path,
+        //     // 'ktp_pemberi_kuasa_path' => $ktp_pemberi_path,
+        //     // 'dokumen_pendukung_path' => $dokumen_pendukung_path,
         // ]);
-
-        DataPemohon::create([
-            'tanggal_pengambilan' => Carbon::now(),
-            'terdakwa_id' => $this->terdakwaId,
-            'nama_pemohon' => $this->nama_pemohon,
-            'nik' => "0812625172671",
-            'tempat_lahir' => "siak",
-            'tanggal_lahir' => Carbon::now(),
-            'jenis_kelamin' => "Laki-laki",
-            'alamat' => "Siak",
-            'agama' => "Islam",
-            'status_perkawinan' => "Sudah Menikah",
-            'pekerjaan' => "Ngoding aja",
-            'nomor_hp' => "08125125712",
-            'ktp_pemohon_path' => null,
-            'ktp_pemberi_kuasa_path' => null,
-            'dokumen_pendukung_path' => null,
-            // 'ktp_pemohon_path' => $ktp_path,
-            // 'ktp_pemberi_kuasa_path' => $ktp_pemberi_path,
-            // 'dokumen_pendukung_path' => $dokumen_pendukung_path,
-        ]);
         
         $this->sendNotificationToFonnte();
         // Tampilkan pesan sukses
@@ -135,7 +141,8 @@ class Index extends Component
             'timer' => 1000,
             'toast' => true,
             'timerProgressBar' => true,
-        ]);
+        ]); 
+        $this->resetPage();
     }
 
     private function sendNotificationToFonnte()

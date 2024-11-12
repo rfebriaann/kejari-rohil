@@ -6,7 +6,7 @@
                     <div class="flex flex-col w-full h-full sm:basis-3/3 md:basis-2/3 p-10 justify-start items-start gap-6 sm:mx-0 md:mx-10">
                         <div>
                             <h1 class="font-montserrat font-semibold text-4xl text-white">
-                                Tabel Data Perkara
+                                Data Perkara
                             </h1>
                         </div>
                         {{-- <div class="">
@@ -41,7 +41,7 @@
                                             <input  type="text"
                                                 wire:model.live = 'search'
                                                 class="bg-[#b7957f] border-2 border-[#5B3018] text-white text-sm rounded-2xl block w-full pl-10 p-2 placeholder-white"
-                                                placeholder="Search" required="">
+                                                placeholder="Cari nama terdakwa" required="">
                                         </div>
                                     </div>
                                     <div class="flex gap-5">
@@ -72,13 +72,13 @@
                                         <thead class="text-xs text-white uppercase bg-[#966534] text-center">
                                             <tr>
                                                 <th scope="col" class="px-4 py-3">
-                                                    #
+                                                    No.
                                                 </th>
                                                 <th scope="col" class="px-10 py-3">
                                                     Nama Terdakwa
                                                 </th>
                                                 <th scope="col" class="px-20 py-3">
-                                                    Pasal Dakwaan
+                                                    Pasal yang didakwakan
                                                 </th>
                                                 <th scope="col" class="px-10 py-3">
                                                     No. Putusan
@@ -96,7 +96,7 @@
                                                     Amar Putusan
                                                 </th>
                                                 <th scope="col" class="px-10 py-3">
-                                                    Register Barang Bukti
+                                                    No. Register Barang Bukti
                                                 </th>
                                                 <th scope="col" class="px-2 py-3">
                                                     P-48
@@ -112,7 +112,7 @@
                                                     <td class="px-4 py-4">
                                                         {{ $i + 1 }}
                                                     </td>
-                                                    <th scope="row" class="px-10 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                    <th scope="row" class="px-10 py-4 font-medium whitespace-nowrap text-white">
                                                         @foreach ($dakwaan->terdakwaks as $terdakwa)
                                                             {{ $terdakwa->nama }}
                                                         @endforeach
@@ -170,7 +170,7 @@
                                 <div class="py-4 px-3">
                                     <div class="flex ">
                                         <div class="flex space-x-4 items-center mb-3">
-                                            <label class="w-32 text-sm font-medium text-white">Per Page</label>
+                                            <label class="w-32 text-xs font-medium text-white">Tampilkan dalam</label>
                                             <select
                                                 wire:model.live='perPage' 
                                                 class="bg-[#5B3018] rounded-xl border text-white text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">

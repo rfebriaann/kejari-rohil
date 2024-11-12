@@ -13,7 +13,7 @@ Route::get('/logout', [App\Livewire\Auth\Logout::class, 'logout'])->name('logout
 
 // superadmin
 Route::middleware('auth', 'role:Super Admin')->group(function() {
-    Route::get('/app/dashboard', App\Livewire\App\Dashboard\Index::class)->name('app.dashboard.index');
+    // Route::get('/app/dashboard', App\Livewire\App\Dashboard\Index::class)->name('app.dashboard.index');
 
     // surat
     Route::get('/app/surat', App\Livewire\App\Surat\Index::class)->name('app.surat.index');

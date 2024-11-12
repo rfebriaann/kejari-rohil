@@ -19,7 +19,7 @@
                             <div class="md:w-2/3 sm:w-full">
                                 <div class="flex flex-col  gap-3">
                                     <h2 class="font-montserrat font-bold text-xl md:text-2xl">Form Pengambilan Barang Bukti</h2>
-                                    <p class="font-montserrat font-medium text-sm md:text-lg leading-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere eum delectus, animi possimus maiores mollitia.</p>
+                                    <p class="font-montserrat font-medium text-sm md:text-lg leading-5">Silahkan mengisi form berikut untuk pengambilan barang bukti.</p>
                                     <a href="{{route('guest.pemohon.index')}}" class="font-montserrat font-semibold px-4 py-1.5 rounded-3xl bg-white text-center shadow-sm w-full md:w-1/2">Mulai input form</a>
                                 </div>
                             </div>
@@ -33,7 +33,7 @@
                             <div class="md:w-2/3 sm:w-full">
                                 <div class="flex flex-col gap-3">
                                     <h2 class="font-montserrat font-bold text-2xl">Data Perkara</h2>
-                                    <p class="font-montserrat font-medium text-lg leading-6">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere eum delectus, animi possimus maiores mollitia.</p>
+                                    <p class="font-montserrat font-medium text-lg leading-6">Cari nama terdakwa untuk melihat putusan dan status barang bukti.</p>
                                     <a href="{{route('guest.perkara.index')}}" class="font-montserrat font-semibold px-4 py-1.5 rounded-3xl bg-white sm:w-full md:w-1/2 text-center" style="box-shadow: 0px 5px 0 rgb(211, 211, 211);">Lihat data perkara</a>
                                 </div>
                             </div>
@@ -46,7 +46,7 @@
 
     <div class="mt-6 grow sm:mt-8 lg:mt-0 mx-20 mb-24 flex sm:flex-col md:flex-row items-center sm:gap-10">
         <div class="basis-1/3 sm:px-0 md:px-40">
-            <h1 class="text-5xl font-montserrat font-bold text-[#5B3018]">SOP Pengambilan Barang Bukti</h1>
+            <h1 class="text-5xl font-montserrat font-bold text-[#5B3018]">Prosedur Pengembalian Barang Bukti</h1>
         </div>
         <div class="basis-2/3">
             <div class="space-y-6 font-montserrat rounded-3xl sm:p-0 md:p-6 flex justify-center items-center">
@@ -59,7 +59,7 @@
                         <h4 class="text-base font-semibold text-gray-900">Memeriksa Status Barang Bukti</h4>
                         <p class="text-sm font-normal text-[#AA7743]">Pemohon memeriksa status barang bukti
                             (dapat diambil/belum dapat diambil)
-                            pada menu daftar perkara</p>
+                            pada menu data perkara</p>
                         </div>
                     </li>
                     
@@ -108,17 +108,17 @@
                                 </span>
                                 <div class=" ml-4">
                                     <h4 class="text-base font-semibold text-gray-900">Menerima Barang Bukti</h4>
-                                    <p class="text-sm font-normal text-[#AA7743]">Petugas Barang Bukti dan Jaksa/Eksekutor
-                                        menyerahkan Barang Bukti kepada
-                                        Pemohon disertai dokumentasi</p>
+                                    <p class="text-sm font-normal text-[#AA7743]">Apabila persyaratan telah sesuai, Petugas Barang Bukti dan Jaksa/Eksekutor menyerahkan barang bukti kepada Pemohon disertai dokumentasi</p>
                                 </div>
                             </li>
                             <li class="ms-6">
                                 <span class="absolute -start-[18px] flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 ring-8 ring-white dark:bg-[#AB7743] dark:ring-[#5B3018]">
                                     <h1 class="text-white font-montserrat font-bold">6</h1>
+                                    
                                 </span>
                                 <div class="ml-4">
                                     <h4 class="text-base font-semibold text-gray-900">Selesai</h4>
+                                    <p class="text-sm font-normal text-[#AA7743]">Barang bukti dibawa oleh Pemohon. Proses pengembalian barang bukti selesai</p>
                                 </div>
                             </li>
                         </ol>

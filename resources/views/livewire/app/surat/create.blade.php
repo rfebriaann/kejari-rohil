@@ -92,10 +92,19 @@
                                                 placeholder="Jumlah barang bukti">
                                             </div>
                                         </div>
+                                        <div class="flex flex-col w-1/2">
+                                            <div class="">
+                                                <label for="">Lokasi barang bukti</label>
+                                                <input  type="text"
+                                                wire:model="lokasi"
+                                                class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
+                                                placeholder="Lokasi barang bukti">
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="flex mx-4">
                                         @foreach($barang_buktis as $barang_bukti)
-                                            <span class="text-white font-medium font-montserrat italic">{{ $barang_bukti['barang_bukti'] }} - {{ $barang_bukti['jumlah'] }},&nbsp</span>
+                                            <span class="text-white font-medium font-montserrat italic">{{ $barang_bukti['barang_bukti'] }} - {{ $barang_bukti['jumlah'] }} - {{ $barang_bukti['jumlah'] }},&nbsp</span>
                                         @endforeach
                                     </div>
                                     <div class="">

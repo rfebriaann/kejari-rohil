@@ -51,6 +51,7 @@
                                         <th class="px-2 md:px-24 py-3 text-center font-semibold uppercase">Tanggal Putusan</th>
                                         <th class="px-2 md:px-24 py-3 text-center font-semibold uppercase">Barang Bukti</th>
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Jumlah</th>
+                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Lokasi Barang Bukti</th>
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Amar Putusan</th>
                                         <th class="px-2 md:px-6  py-3 text-center font-semibold uppercase">Register Barang Bukti</th>
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase ">P-48</th>
@@ -89,6 +90,15 @@
                                                 @foreach ($dakwaan->barangBuktis as $barang_bukti)
                                                 <div>
                                                     <span>{{ $barang_bukti->jumlah }}</span>
+                                                </div>
+                                                @endforeach
+                                            </div>
+                                        </td>
+                                        <td class="px-2 md:px-6 py-4">
+                                            <div class="flex flex-col justify-between gap-8">
+                                                @foreach ($dakwaan->barangBuktis as $barang_bukti)
+                                                <div>
+                                                    <span>{{ $barang_bukti->lokasi }}</span>
                                                 </div>
                                                 @endforeach
                                             </div>

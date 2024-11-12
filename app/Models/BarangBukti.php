@@ -10,6 +10,7 @@ class BarangBukti extends Model
     protected $fillable = ['dakwaan_id', 
     'barang_bukti', 
     'jumlah', 
+    'lokasi'
 ];
 
     public function dakwaan()

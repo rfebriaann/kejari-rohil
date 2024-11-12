@@ -4,13 +4,12 @@ namespace App\Livewire\App\Surat;
 
 use Livewire\Attributes\Layout;
 use Livewire\Component;
-use Illuminate\Support\Facades\DB;
 use App\Models\Dakwaan;
-use App\Models\Terdakwa;
-use App\Models\BarangBukti;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class Create extends Component
 {
+    use LivewireAlert;
     #[Layout('layouts.dashboard')]
 
     // Properti untuk form input
@@ -25,6 +24,7 @@ class Create extends Component
     public $nama_terdakwa;
     public $barang_bukti;
     public $jumlah;
+    public $lokasi;
     public $amar_barang_bukti;
     public $nomor_register_barang_bukti;
     public $p48;
@@ -41,10 +41,12 @@ class Create extends Component
         $this->barang_buktis[] = [
             'barang_bukti' => $this->barang_bukti,
             'jumlah' => $this->jumlah,
+            'lokasi' => $this->lokasi,
         ];
 
         $this->barang_bukti = '';
         $this->jumlah = '';
+        $this->lokasi = '';
     }
 
     public function submit()
@@ -74,19 +76,19 @@ class Create extends Component
 
         // Simpan data terdakwak
         $dakwaan->terdakwaks()->create(['nama' => $this->nama_terdakwa]);
-        // foreach ($this->terdakwaks as $terdakwa) {
-        //     $dakwaan->terdakwaks()->create($terdakwa);
-        // }
 
         // Simpan data barang bukti
         foreach ($this->barang_buktis as $barang_bukti) {
             $dakwaan->barangBuktis()->create($barang_bukti);
         }
-
+        $this->alert('success', 'Data berhasil di submit', [
+            'position' => 'center',
+            'timer' => 1000,
+            'toast' => true,
+            'timerProgressBar' => true,
+        ]); 
         // Reset form
         $this->reset();
-
-        session()->flash('message', 'Data dakwaan berhasil disimpan.');
     }
 
     public function render()

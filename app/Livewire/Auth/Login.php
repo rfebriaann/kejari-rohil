@@ -26,7 +26,7 @@ class Login extends Component
             $users = Auth::user();
             // dd($users->roles);
             if($users->hasRole('Super Admin')){
-                return redirect()->route('app.dashboard.index');
+                return redirect()->route('app.surat.index');
             } else{
                 return redirect()->route('homepage');
             }

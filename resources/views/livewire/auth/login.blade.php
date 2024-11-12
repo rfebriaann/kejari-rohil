@@ -8,7 +8,7 @@
                     </div>
                     <div class="w-48">
                         <h1 class="text-2xl font-montserrat font-bold block">
-                            Kejaksaan Negeri
+                            PAPBB Kejaksaan Negeri
                             <span class="">Rokan Hilir</span>
                         </h1>
                     </div>
@@ -21,7 +21,7 @@
                             name="email"
                             id="email"
                             wire:model="email"
-                            type="text" class="w-full text-black font-montserrat border-2 p-2 px-4 rounded-xl" placeholder="Silahkan masukkan email anda..">
+                            type="text" class="w-full text-black font-montserrat border-2 p-2 px-4 rounded-xl" placeholder="Silahkan masukkan email anda">
                             @error('email')
                                 <small class="text-sm mx-4 text-red-500">{{$message}}</small>
                             @enderror
@@ -32,7 +32,7 @@
                             name="password"
                             id="password"
                             wire:model="password"
-                            type="password" class="w-full text-black font-montserrat border-2 p-2 px-4 rounded-xl" placeholder="Silahkan masukkan password anda..">
+                            type="password" class="w-full text-black font-montserrat border-2 p-2 px-4 rounded-xl" placeholder="Silahkan masukkan password anda">
                             @error('password')
                                 <small class="text-sm mx-4 text-red-500">{{$message}}</small>
                             @enderror
@@ -46,7 +46,7 @@
                     </form>
                 </div>
                 <div class="font-montserrat italic font-medium">
-                    <h2>Developed by Kejari Rokan Hilir</h2>
+                    <h2>developed by Peserta Latsar Shely Triliya</h2>
                 </div>
             </div>
         </div>

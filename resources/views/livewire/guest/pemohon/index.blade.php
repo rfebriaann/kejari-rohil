@@ -10,7 +10,7 @@
                             </h1>
                         </div>
                         <div class="">
-                            <p class="font-montserrat text-white font-normal text-lg">Apabila anda membutuhkan surat kuasa, anda bisa mendownloadnya disini untuk kebutuhap dokumen pendukung</p>
+                            <p class="font-montserrat text-white font-normal text-lg">Apabila anda membutuhkan format surat kuasa, anda bisa mendonwloadnya disini</p>
                         </div>
                         <div>
                             <a href="" class="font-montserrat font-semibold px-4 py-2 rounded-3xl bg-white w-1/2 text-center" style="box-shadow: 0px 5px 0 rgb(211, 211, 211);">Download Surat Kuasa</a>
@@ -53,6 +53,17 @@
                                                     @endforeach
                                                 </div>
                                             @endif
+                                        </div>
+                                        <div class="basis-2/3 w-full">
+                                            <span class="text-red-800">
+                                                *
+                                                <label class="text-black" for="">Tanggal Pengambilan</label>
+                                            </span>
+                                            <input  type="date"
+                                            wire:model="tanggal_pengambilan"
+                                            class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
+                                            placeholder="Tanggal pengambilan">
+                                            <span class="mx-5 font-montserrat font-medium italic text-sm text-red-800">@error('tanggal_pengambilan') {{ $message }} @enderror</span>
                                         </div>
                                     </div>
                                 </div>
@@ -199,7 +210,7 @@
                             </div>
                             <div>
                                 <div class="flex flex-col d px-10 sm:mt- md:-mt-4 pb-10 sm:gap-6 md:gap-6">
-                                    <h1 class="text-xl font-montserrat font-semibold">Berkas Pemohon</h1>
+                                    <h1 class="text-xl font-montserrat font-semibold">Dokumen Pemohon</h1>
                                     <div class="flex flex-col sm:gap-0 md:gap-4 px-4 py-4 rounded-3xl border-2 border-dashed border-[#0d0e13] -mt-4 items-start">
                                         <div class="flex w-full sm:gap-0 md:gap-3">
                                             <div class="flex sm:flex-col md:flex-row w-full items-end sm:gap-0 md:gap-5">
@@ -208,6 +219,7 @@
                                                         *
                                                         <label class="text-black" for="">Unggah KTP Pemohon</label>
                                                     </span>
+                                                    <p class="text-sm italic">File yang diupload dalam bentuk PDF, dengan batas ukuran 2MB</p>
                                                     <input  type="file"
                                                     wire:model="ktp_pemohon"
                                                     class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
@@ -215,7 +227,8 @@
                                                     <span class="mx-5 font-montserrat font-medium italic text-sm text-red-800">@error('ktp_pemohon') {{ $message }} @enderror</span>
                                                 </div>
                                                 <div class="basis-2/3">
-                                                    <label for="">Unggah KTP Pemberi Kuasa</label>
+                                                    <label for="">Unggah KTP Pemberi Kuasa (Apabila diwakili)</label>
+                                                    <p class="text-sm italic">File yang diupload dalam bentuk PDF, dengan batas ukuran 2MB</p>
                                                     <input  type="file"
                                                     wire:model="ktp_pemberi"
                                                     class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
@@ -226,7 +239,8 @@
                                         </div>
                                         <div class="flex flex-col w-full gap-3 justify-center">
                                             <div class="flex flex-col w-full items-start">
-                                                <label for="">Dokumen Pendukung</label>
+                                                <label for="">Dokumen Pendukung (KK/STNK/BPKB/atau lainnya)</label>
+                                                <p class="text-sm italic">File yang diupload dalam bentuk PDF, dengan batas ukuran 2MB</p>
                                                 <input  type="file"
                                                 wire:model="dokumen_pendukung"
                                                 class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"

@@ -1,9 +1,9 @@
 <div>
     <div class="w-full h-auto flex mt-24 mb-24">
-        <div class="mx-20 h-full w-full rounded-3xl overflow-hidden">
-            <div class="flex flex-col bg-[#5B3018] h-full rounded-3xl overflow-hidden" style="box-shadow: 0px 14px 0 rgba(87, 46, 23, 1);">
+        <div class="sm:p-2 md:p-0 sm:mx-0 md:mx-20 h-full w-full rounded-3xl overflow-hidden">
+            <div class="lex flex-col bg-[#5B3018] w-full h-full rounded-3xl overflow-hidden sm:gap-10" style="box-shadow: 0px 14px 0 rgba(87, 46, 23, 1);">
                 <div class="flex basis-2/3">
-                    <div class="flex flex-col w-full h-full basis-2/3 p-10 justify-start items-start gap-6 mx-10">
+                    <div class="flex flex-col w-full h-full sm:basis-3/3 md:basis-2/3 p-10 justify-start items-start gap-6 sm:mx-0 md:mx-10">
                         <div>
                             <h1 class="font-montserrat font-semibold text-4xl text-white">
                                 Tabel Data Perkara
@@ -15,10 +15,10 @@
                         <div>
                             <a href="" class="font-montserrat font-semibold px-4 py-2 rounded-3xl bg-white w-1/2 text-center" style="box-shadow: 0px 5px 0 rgb(211, 211, 211);">Download Surat Kuasa</a>
                         </div> --}}
-                        <span class="text-white font-montserrat text-lg w-1/2 leading-6">Download semua data perkara dengan mengklik tombol button dibawah</span>
+                        <span class="text-white font-montserrat text-lg sm:w-full md:w-1/2 leading-6">Download semua data perkara dengan mengklik tombol button dibawah</span>
                         <button class="font-montserrat font-semibold text-gray-700 bg-[#FFFFFF] hover:bg-[#d2d2d2] focus:ring-4 focus:ring-blue-300 rounded-2xl text-sm px-5 py-2.5 focus:outline-none" wire:click="export">Export to Excel</button>
                     </div>
-                    <div class="basis-1/3 bg-cover bg-gradient-to-t " style="background-image: url('storage/assets/img/bg-1.jpeg')">
+                    <div class="basis-1/3 bg-cover bg-gradient-to-t sm:hidden md:block" style="background-image: url('storage/assets/img/bg-1.jpeg')">
                         <div class="bg-cover bg-gradient-to-r from-[#5B3018] w-full h-full">
                         </div>
                     </div>
@@ -27,8 +27,8 @@
                     <div>
                         <section class="">
                             <div class="bg-[#ab7743] border-r-2 border-l-2 border-b-2s  border-[#5b3018] ">
-                                <div class="flex items-center justify-between d p-4 mx-2">
-                                    <div class="flex">
+                                <div class="flex sm:flex-col md:flex-row items-center justify-between d p-4 mx-2 sm:gap-4 md:gap-0">
+                                    <div class="flex sm:w-full md:w-auto">
                                         <div class="relative w-full">
                                             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                                 <svg aria-hidden="true" class="w-5 h-5 text-white"

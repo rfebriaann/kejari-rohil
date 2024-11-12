@@ -1,9 +1,9 @@
 <div>
     <div class="w-full h-auto flex mt-24 mb-12">
-        <div class="mx-20 h-full w-full rounded-3xl">
-            <div class="flex flex-col bg-[#5B3018] w-full h-full rounded-3xl overflow-hidden" style="box-shadow: 0px 14px 0 rgba(87, 46, 23, 1);">
+        <div class="sm:px-2 sm:mx-0 md:mx-20 h-full w-full rounded-3xl">
+            <div class="flex flex-col bg-[#5B3018] w-full h-full rounded-3xl overflow-hidden sm:gap-10" style="box-shadow: 0px 14px 0 rgba(87, 46, 23, 1);">
                 <div class="flex">
-                    <div class="flex flex-col w-full h-full basis-2/3 p-20 justify-start items-start gap-6">
+                    <div class="flex flex-col w-full h-full basis-2/3 sm:p-10 md:p-20 justify-start items-start gap-6">
                         <div>
                             <h1 class="font-montserrat font-semibold text-4xl text-white">
                                 Input data permohonan anda
@@ -16,18 +16,18 @@
                             <a href="" class="font-montserrat font-semibold px-4 py-2 rounded-3xl bg-white w-1/2 text-center" style="box-shadow: 0px 5px 0 rgb(211, 211, 211);">Download Surat Kuasa</a>
                         </div>
                     </div>
-                    <div class="basis-1/3 bg-cover bg-gradient-to-t " style="background-image: url('storage/assets/img/bg-1.jpeg')">
+                    <div class="basis-1/3 bg-cover bg-gradient-to-t sm:hidden md:block" style="background-image: url('storage/assets/img/bg-1.jpeg')">
                         <div class="bg-cover bg-gradient-to-r from-[#5B3018] w-full h-full">
                             {{-- <img class="object-cover h-full w-full overflow-hidden" src="{{ asset('storage/assets/img/bg2.png') }}" alt=""> --}}
                         </div>
                     </div>
                 </div>
                 
-                <div class="w-full h-full bg-[#D7BDA6] p-20 border-l-2 border-r-2 border-[#5b3018]">
+                <div class="w-full h-full bg-[#D7BDA6] sm:p-0 md:p-20 border-l-2 border-r-2 border-[#5b3018]">
                     <form wire:submit.prevent="submit">
                     <div class="flex flex-col w-full">
                         <div>
-                            <div class="flex flex-col d px-10 -mt-4 pb-10 gap-6">
+                            <div class="flex flex-col d px-10 sm:mt-8 md:-mt-4 pb-10 gap-6">
                                 <h1 class="text-xl font-montserrat font-semibold">Nama Terdakwa</h1>
                                 <div class="flex flex-col gap-4 px-4 py-4 rounded-3xl border-2 border-dashed border-[#0d0e13] -mt-4 items-start">
                                     <div class="flex w-full items-end gap-5">
@@ -61,15 +61,15 @@
                         </div>
 
                         <div>
-                            <div class="flex flex-col d px-10 -mt-4 pb-10 gap-6">
+                            <div class="flex flex-col d px-10 sm:mt-0 md:-mt-4 pb-10 gap-6">
                                 <div>
                                     <h1 class="text-xl font-montserrat font-semibold">Data Pemohon</h1>
                                     <p class="font-montserrat font-medium italic text-sm">*Isi data pemohon sesuai dengan KTP</p>
                                 </div>
                                 <div class="flex flex-col gap-4 px-4 py-4 rounded-3xl border-2 border-dashed border-[#0d0e13] -mt-4 items-start">
-                                    <div class="flex flex-col w-full gap-3">
-                                        <div class="flex w-full items-end gap-5">
-                                            <div class="basis-2/3">
+                                    <div class="flex flex-col w-full sm:gap-0 md:gap-3">
+                                        <div class="flex sm:flex-col md:flex-row w-full items-end sm:gap-0 md:gap-5">
+                                            <div class="basis-2/3 w-full">
                                                 <span class="text-red-800">
                                                     *
                                                     <label for="" class="text-black">Nama Pemohon</label>
@@ -80,7 +80,7 @@
                                                 placeholder="Nama Pemohon">
                                                 <span class="mx-5 font-montserrat font-medium italic text-sm text-red-800">@error('nama_pemohon') {{ $message }} @enderror</span>
                                             </div>
-                                            <div class="basis-2/3">
+                                            <div class="basis-2/3 w-full">
                                                 <span class="text-red-800">
                                                     *
                                                     <label class="text-black" for="">NIK</label>
@@ -93,8 +93,8 @@
                                             </div>
                                         </div>
 
-                                        <div class="flex w-full items-end gap-5">
-                                            <div class="basis-2/3">
+                                        <div class="flex sm:flex-col md:flex-row w-full items-end sm:gap-0 md:gap-5">
+                                            <div class="basis-2/3 w-full">
                                                 <span class="text-red-800">
                                                     *
                                                     <label class="text-black" for="">Tempat Lahir</label>
@@ -105,7 +105,7 @@
                                                 placeholder="Tempat Lahir">
                                                 <span class="mx-5 font-montserrat font-medium italic text-sm text-red-800">@error('tempat_lahir') {{ $message }} @enderror</span>
                                             </div>
-                                            <div class="basis-2/3">
+                                            <div class="basis-2/3 w-full">
                                                 <span class="text-red-800">
                                                     *
                                                     <label class="text-black" for="">Tanggal Lahir</label>
@@ -118,8 +118,8 @@
                                             </div>
                                         </div>
 
-                                        <div class="flex w-full items-end gap-5">
-                                            <div class="basis-2/3">
+                                        <div class="flex sm:flex-col md:flex-row w-full items-end sm:gap-0 md:gap-5">
+                                            <div class="basis-2/3 w-full">
                                                 <span class="text-red-800">
                                                     *
                                                     <label class="text-black" for="">Jenis Kelamin</label>
@@ -131,7 +131,7 @@
                                                 </select>
                                                 <span class="mx-5 font-montserrat font-medium italic text-sm text-red-800">@error('jenis_kelamin') {{ $message }} @enderror</span>
                                             </div>
-                                            <div class="basis-2/3">
+                                            <div class="basis-2/3 w-full">
                                                 <span class="text-red-800">
                                                     *
                                                     <label class="text-black" for="">Agama</label>
@@ -144,8 +144,8 @@
                                             </div>
                                         </div>
 
-                                        <div class="flex w-full items-end gap-5">
-                                            <div class="basis-2/3">
+                                        <div class="flex sm:flex-col md:flex-row w-full items-end sm:gap-0 md:gap-5">
+                                            <div class="basis-2/3 w-full">
                                                 <span class="text-red-800">
                                                     *
                                                     <label class="text-black" for="">Alamat</label>
@@ -156,7 +156,7 @@
                                                 placeholder="Alamat">
                                                 <span class="mx-5 font-montserrat font-medium italic text-sm text-red-800">@error('alamat') {{ $message }} @enderror</span>
                                             </div>
-                                            <div class="basis-2/3">
+                                            <div class="basis-2/3 w-full">
                                                 <span class="text-red-800">
                                                     *
                                                     <label class="text-black" for="">Status Perkawinan</label>
@@ -170,8 +170,8 @@
                                             </div>
                                         </div>
 
-                                        <div class="flex w-full items-end gap-5">
-                                            <div class="basis-2/3">
+                                        <div class="flex sm:flex-col md:flex-row w-full items-end sm:gap-0 md:gap-5">
+                                            <div class="basis-2/3 w-full">
                                                 <span class="text-red-800">
                                                     *
                                                     <label class="text-black" for="">Pekerjaan</label>
@@ -182,7 +182,7 @@
                                                 placeholder="Pekerjaan">
                                                 <span class="mx-5 font-montserrat font-medium italic text-sm text-red-800">@error('pekerjaan') {{ $message }} @enderror</span>
                                             </div>
-                                            <div class="basis-2/3">
+                                            <div class="basis-2/3 w-full">
                                                 <span class="text-red-800">
                                                     *
                                                     <label class="text-black" for="">Nomor Hp</label>
@@ -198,11 +198,11 @@
                                 </div>
                             </div>
                             <div>
-                                <div class="flex flex-col d px-10 -mt-4 pb-10 gap-6">
+                                <div class="flex flex-col d px-10 sm:mt- md:-mt-4 pb-10 sm:gap-6 md:gap-6">
                                     <h1 class="text-xl font-montserrat font-semibold">Berkas Pemohon</h1>
-                                    <div class="flex flex-col gap-4 px-4 py-4 rounded-3xl border-2 border-dashed border-[#0d0e13] -mt-4 items-start">
-                                        <div class="flex flex-col w-full gap-3">
-                                            <div class="flex w-full items-end gap-5">
+                                    <div class="flex flex-col sm:gap-0 md:gap-4 px-4 py-4 rounded-3xl border-2 border-dashed border-[#0d0e13] -mt-4 items-start">
+                                        <div class="flex w-full sm:gap-0 md:gap-3">
+                                            <div class="flex sm:flex-col md:flex-row w-full items-end sm:gap-0 md:gap-5">
                                                 <div class="basis-2/3">
                                                     <span class="text-red-800">
                                                         *
@@ -238,7 +238,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="font-montserrat mx-80 font-semibold text-gray-700 bg-[#FFFFFF] hover:bg-[#d2d2d2] focus:ring-4 focus:ring-blue-300 rounded-2xl text-sm px-5 py-2.5 focus:outline-none">Simpan Data</button>
+                        <button type="submit" class="font-montserrat sm:mb-10 md:mb-0 sm:mx-20 md:mx-80 font-semibold text-gray-700 bg-[#FFFFFF] hover:bg-[#d2d2d2] focus:ring-4 focus:ring-blue-300 rounded-2xl text-sm px-5 py-2.5 focus:outline-none">Simpan Data</button>
                     </div>
                 </div>
             </form>

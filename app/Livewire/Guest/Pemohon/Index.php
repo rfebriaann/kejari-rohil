@@ -88,7 +88,7 @@ class Index extends Component
         // $ktp_pemberi_path = $this->ktp_pemberi->store('documents');
         // $dokumen_pendukung_path = $this->dokumen_pendukung->store('documents');
 
-        // // Simpan path ke database
+        // // // Simpan path ke database
         // DataPemohon::create([
         //     'tanggal_pengambilan' => Carbon::now(),
         //     'terdakwa_id' => $this->terdakwaId,
@@ -128,7 +128,7 @@ class Index extends Component
             // 'dokumen_pendukung_path' => $dokumen_pendukung_path,
         ]);
         
-        // $this->sendNotificationToFonnte();
+        $this->sendNotificationToFonnte();
         // Tampilkan pesan sukses
         $this->alert('success', 'Data berhasil di kirim', [
             'position' => 'center',
@@ -140,8 +140,9 @@ class Index extends Component
 
     private function sendNotificationToFonnte()
     {
-        $token = "S5bJrbeynjfVvexibk2C";
-        $target = "6285161762468";
+        $token = "JffVysANEWe4a5x6nhKR";
+        $target = "6282119056383";
+        // $target = "6285161762468";
         // $target = "6281266941924";
 
         $curl = curl_init();
@@ -158,7 +159,7 @@ class Index extends Component
         CURLOPT_POSTFIELDS => array(
         'target' => $target,
         // 'message' => $this->nama_pemohon . " " . "Mengajukan permohonan di sistem",
-        'message' => "Testing notifikasi Whatsapp",
+        'message' => "WOIII kerjaaa",
         ),
         CURLOPT_HTTPHEADER => array(
             "Authorization: $token"

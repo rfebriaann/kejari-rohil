@@ -17,40 +17,6 @@
             <a href="{{route('homepage')}}" class="font-semibold text-lg cursor-pointer font-montserrat">Beranda</a>
             <a href="{{route('guest.pemohon.index')}}" class="font-semibold text-lg cursor-pointer font-montserrat">Form Permohonan</a>
             <a href="{{route('guest.perkara.index')}}" class="font-semibold text-lg cursor-pointer font-montserrat">Data Perkara</a>
-            {{-- <div class="relative group">
-                <p class="font-semibold text-lg cursor-pointer font-montserrat">Desa Cantik</p>
-                <!-- Dropdown Menu for Desa Cantik -->
-                <div class="absolute w-40 hidden group-hover:block bg-[#1d2730] p-4 mt-0 space-y-2 rounded-xl shadow-lg">
-                    <div>
-                        <a href="" class="font-montserrat cursor-pointer">Statistik</a>
-                    </div>
-                </div>
-            </div> --}}
-            {{-- <div class="relative group">
-                <p class="font-semibold text-lg cursor-pointer font-montserrat">Data</p>
-                <!-- Dropdown Menu for Data -->
-                <div class="absolute w-40 hidden group-hover:block bg-[#1d2730] p-4 mt-0 space-y-2 rounded-xl shadow-lg">
-                    <div>
-                        <a href="" class="font-montserrat cursor-pointer">Indikator</a>
-                    </div>
-                    <div class="border-b border-[#fff] h-1"></div>
-                    <div>
-                        <a href="" class="text-black font-montserrat cursor-pointer">Komoditas</a>
-                    </div>
-                </div>
-            </div> --}}
-            {{-- <div class="relative group">
-                <p class="font-semibold text-lg cursor-pointer font-montserrat">Dokumen</p>
-                <!-- Dropdown Menu for Data -->
-                <div class="absolute w-40 hidden group-hover:block bg-[#1d2730] p-4 mt-0 space-y-2 rounded-xl shadow-lg">
-                    <div>
-                        <a href="" class="text-black font-montserrat cursor-pointer">Publikasi</a>
-                    </div>
-                    <div class="border-b border-[#fff] h-1"></div>
-                    <div>
-                        <a href="" class="text-black font-montserrat cursor-pointer">Infografis</a>
-                    </div>
-                </div> --}}
             </div>
         </div>
     </div>
@@ -66,14 +32,12 @@
         </div>
         <div class="flex flex-col items-center justify-center h-full space-y-6">
             <div class="relative">
-                <a href="{{route('homepage')}}" class="font-semibold text-lg cursor-pointer font-montserrat">Beranda</a>
-                <!-- Dropdown Mobile for Desa Cantik -->
+                <a href="{{route('homepage')}}" class="text-xl font-semibold cursor-pointer" id="desa-menu-mobile">Beranda</a>
             </div>
             <div class="relative">
-                <a href="{{route('guest.pemohon.index')}}" class="font-semibold text-lg cursor-pointer font-montserrat">Form Permohonan</a>
-                <!-- Dropdown Mobile for Data -->
+                <a href="{{route('guest.pemohon.index')}}" class="text-xl font-semibold cursor-pointer" id="data-menu-mobile">Form Permohonan</a>
             </div>
-            <a href="{{route('guest.perkara.index')}}" class="font-semibold text-lg cursor-pointer font-montserrat">Data Perkara</a>
+            <a href="{{route('guest.perkara.index')}}" class="text-xl font-semibold">Data Perkara</a>
         </div>
     </div>
 </nav>

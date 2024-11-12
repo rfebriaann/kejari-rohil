@@ -26,20 +26,16 @@ class Index extends Component
 
 public function export()
 {
-    // Load the data with the selected fields and relations
     $dakwaans = Dakwaan::with(['barangBuktis', 'terdakwaks'])->get();
-
-    // Prepare data for export
     $exportData = [];
-    // $i = 1;
-    // Loop through each record and gather related data
+
     foreach ($dakwaans as $i => $dakwaan) {
-        // Get the common data for dakwaan (this will stay the same for all barang bukti)
+        
         $commonData = [
             'No.' => $i+=1,
-            'nama_terdakwa' => $dakwaan->terdakwaks->pluck('nama')->implode(', '), // Nama Terdakwa
-            'barang_bukti' => '', // Tempat untuk barang bukti
-            'jumlah_barang_bukti' => '', // Tempat untuk jumlah barang bukti
+            'nama_terdakwa' => $dakwaan->terdakwaks->pluck('nama')->implode(', '), 
+            'barang_bukti' => '', 
+            'jumlah_barang_bukti' => '', 
             'nomor_putusan' => $dakwaan->nomor_putusan,
             'tanggal_putusan' => $dakwaan->tanggal_putusan,
             'pasal_didakwakan' => $dakwaan->pasal_didakwakan,
@@ -49,15 +45,12 @@ public function export()
             'status' => $dakwaan->status,
         ];
 
-        // Loop through each barang bukti and add it as a new row with dakwaan data
         foreach ($dakwaan->barangBuktis as $index => $barangBukti) {
             // Copy the common data for dakwaan, but add barang bukti details
             $data = $commonData; // Copy the common data for dakwaan
             $data['barang_bukti'] = $barangBukti->barang_bukti;
             $data['jumlah_barang_bukti'] = $barangBukti->jumlah;
 
-            // If this is not the first barang bukti, set dakwaan's data for the next row to null
-            // so it doesn't repeat in every row.
             if ($index > 0) {
                 $data['No.'] = null;
                 $data['nama_terdakwa'] = null;

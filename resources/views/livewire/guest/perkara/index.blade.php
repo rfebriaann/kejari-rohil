@@ -16,7 +16,7 @@
                             <a href="" class="font-montserrat font-semibold px-4 py-2 rounded-3xl bg-white w-1/2 text-center" style="box-shadow: 0px 5px 0 rgb(211, 211, 211);">Download Surat Kuasa</a>
                         </div> --}}
                         <span class="text-white font-montserrat text-lg sm:w-full md:w-1/2 leading-6">Download semua data perkara dengan mengklik tombol button dibawah</span>
-                        <button class="font-montserrat font-semibold text-gray-700 bg-[#FFFFFF] hover:bg-[#d2d2d2] focus:ring-4 focus:ring-blue-300 rounded-2xl text-sm px-5 py-2.5 focus:outline-none" wire:click="export">Export to Excel</button>
+                        {{-- <button class="font-montserrat font-semibold text-gray-700 bg-[#FFFFFF] hover:bg-[#d2d2d2] focus:ring-4 focus:ring-blue-300 rounded-2xl text-sm px-5 py-2.5 focus:outline-none" wire:click="export">Export to Excel</button> --}}
                     </div>
                     <div class="basis-1/3 bg-cover bg-gradient-to-t sm:hidden md:block" style="background-image: url('storage/assets/img/bg-1.jpeg')">
                         <div class="bg-cover bg-gradient-to-r from-[#5B3018] w-full h-full">
@@ -92,6 +92,9 @@
                                                 <th scope="col" class="px-6 py-3">
                                                     Jumlah
                                                 </th>
+                                                <th scope="col" class="px-6 py-3">
+                                                    Lokasi Barang Bukti
+                                                </th>
                                                 <th scope="col" class="px-10 py-3">
                                                     Amar Putusan
                                                 </th>
@@ -142,6 +145,15 @@
                                                             @foreach ($dakwaan->barangBuktis as $barang_bukti)
                                                             <div>
                                                                 <span>{{ $barang_bukti->jumlah }}</span>
+                                                            </div>
+                                                            @endforeach
+                                                        </div>
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        <div class="flex flex-col justify-between gap-8">
+                                                            @foreach ($dakwaan->barangBuktis as $barang_bukti)
+                                                            <div>
+                                                                <span>{{ $barang_bukti->lokasi }}</span>
                                                             </div>
                                                             @endforeach
                                                         </div>

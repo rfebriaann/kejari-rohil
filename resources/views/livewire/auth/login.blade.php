@@ -51,11 +51,11 @@
             </div>
         </div>
         <div class="relative basis-1/2 bg-[#FF8552] w-full h-full rounded-[60px] overflow-hidden">
-            <img class="object-cover h-full w-full overflow-hidden" src="{{ asset('storage/assets/img/bg3.png') }}" alt="">
-            <div class="absolute flex justify-center inset-0 bg-gradient-to-t from-black/100 to-transparent h-full w-full z-10">
-                {{-- <div class="p-20">
-                    <img class="object-cover size-28 rounded-2xl" src="{{ asset('storage/assets/img/logoppapng.png') }}" alt="">
-                </div> --}}
+            <img class="object-cover h-full w-full overflow-hidden" src="{{ asset('storage/assets/img/bg-1.jpeg') }}" alt="">
+            <div class="absolute flex justify-center inset-0 bg-gradient-to-t from-black/75 to-transparent h-full w-full z-10">
+                <div class="p-20">
+                    <img class="object-cover size-28 rounded-2xl" src="{{ asset('storage/assets/img/logokejari.png') }}" alt="">
+                </div>
             </div>
         </div>
     </div>

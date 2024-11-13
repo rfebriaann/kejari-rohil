@@ -71,7 +71,7 @@
                             <table class="min-w-full divide-y divide-gray-200 text-sm font-montserrat">
                                 <thead class="text-xs text-white uppercase bg-[#855a2f]">
                                     <tr>
-                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">#</th>
+                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">No.</th>
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Nama Terdakwa</th>
                                         <th class="px-2 md:px-32 py-3 text-center font-semibold uppercase">Pasal yang Didakwakan</th>
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">No. Putusan</th>
@@ -80,7 +80,7 @@
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Jumlah</th>
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Lokasi Barang Bukti</th>
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Amar Putusan</th>
-                                        <th class="px-2 md:px-6  py-3 text-center font-semibold uppercase">Register Barang Bukti</th>
+                                        <th class="px-2 md:px-6  py-3 text-center font-semibold uppercase">Nomor Register Barang Bukti</th>
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase ">P-48</th>
                                         <th class="px-2 md:px-28 py-3 text-center font-semibold uppercase" style="width: 150px;">Status</th>
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase ">Aksi</th>
@@ -162,13 +162,20 @@
                                                 <span class="px-2 py-2 bg-[#ff0040] rounded-2xl">{{ $dakwaan->status }}</span>
                                             @endif
                                         </td>
-                                        <td class="px-2 md:px-6 py-4 text-left">
-                                            <button wire:click="destroy({{ $dakwaan->id }})" class="text-white">
-                                                <div class="flex items-center gap-2">
-                                                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-trash"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7l16 0" /><path d="M10 11l0 6" /><path d="M14 11l0 6" /><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" /><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>
-                                                    Hapus
-                                                </div>
-                                            </button>
+                                        <td class=" px-2 md:px-6 py-4 text-left">
+                                            <div class="flex items-center gap-4">
+                                                <a href="{{route('app.surat.edit.{id}', $dakwaan->id)}}" class="text-white">
+                                                    <div class="flex items-center gap-2">
+                                                        Edit
+                                                    </div>
+                                                </a>
+                                                <button wire:click="destroy({{ $dakwaan->id }})" class="text-white">
+                                                    <div class="flex items-center gap-2">
+                                                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-trash"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7l16 0" /><path d="M10 11l0 6" /><path d="M14 11l0 6" /><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" /><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>
+                                                        Hapus
+                                                    </div>
+                                                </button>
+                                            </div>
                                         </td>
                                     </tr>
                                     @endforeach

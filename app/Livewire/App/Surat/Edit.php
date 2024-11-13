@@ -7,30 +7,48 @@ use Livewire\Component;
 use App\Models\Dakwaan;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 
-class Create extends Component
+class Edit extends Component
 {
     use LivewireAlert;
     #[Layout('layouts.dashboard')]
 
-    // Properti untuk form input
+    public $id;
     public $nomor_putusan;
     public $tanggal_putusan;
     public $pasal_didakwakan;
-    
-    public $terdakwaks;
-    // public $terdakwaks = [];
+    public $terdakwaks = [];
     public $barang_buktis = [];
-    
     public $nama_terdakwa;
     public $amar_barang_bukti;
     public $nomor_register_barang_bukti;
     public $p48;
     public $status;
-
     public $barang_bukti;
     public $jumlah;
     public $lokasi;
     public $editingIndex = null;
+
+    public function mount($id)
+    {
+        $this->id = $id;
+        $this->loadDakwaan();
+    }
+
+    public function loadDakwaan()
+    {
+        $dakwaan = Dakwaan::with(['terdakwaks', 'barangBuktis'])->findOrFail($this->id);
+
+        $this->nomor_putusan = $dakwaan->nomor_putusan;
+        $this->tanggal_putusan = $dakwaan->tanggal_putusan;
+        $this->pasal_didakwakan = $dakwaan->pasal_didakwakan;
+        $this->amar_barang_bukti = $dakwaan->amar_barang_bukti;
+        $this->nomor_register_barang_bukti = $dakwaan->nomor_register_barang_bukti;
+        $this->p48 = $dakwaan->p48;
+        $this->status = $dakwaan->status;
+
+        $this->terdakwaks = $dakwaan->terdakwaks->toArray();
+        $this->barang_buktis = $dakwaan->barangBuktis->toArray();
+    }
 
     public function addTerdakwa()
     {
@@ -41,18 +59,15 @@ class Create extends Component
     public function addBarangBukti()
     {
         if ($this->editingIndex === null) {
-            // Add new item
             $this->barang_buktis[] = [
                 'barang_bukti' => $this->barang_bukti,
                 'jumlah' => $this->jumlah,
                 'lokasi' => $this->lokasi,
             ];
         } else {
-            // Update existing item
             $this->updateBarangBukti($this->editingIndex);
         }
 
-        // Clear input fields
         $this->resetInput();
     }
 
@@ -79,7 +94,7 @@ class Create extends Component
     public function deleteBarangBukti($index)
     {
         unset($this->barang_buktis[$index]);
-        $this->barang_buktis = array_values($this->barang_buktis); // Re-index array
+        $this->barang_buktis = array_values($this->barang_buktis);
     }
 
     private function resetInput()
@@ -89,22 +104,20 @@ class Create extends Component
         $this->lokasi = '';
     }
 
-    public function submit()
+    public function update()
     {
-        // Validasi
         $this->validate([
             'nomor_putusan' => 'required|string',
             'tanggal_putusan' => 'required|date',
             'pasal_didakwakan' => 'required|string',
-            'nama_terdakwa' => 'required|string',
-            'barang_buktis' => 'required|array|min:1',
             'amar_barang_bukti' => 'required',
             'p48' => 'required',
             'status' => 'required',
         ]);
 
-        // Simpan data dakwaan
-        $dakwaan = Dakwaan::create([
+        $dakwaan = Dakwaan::findOrFail($this->id);
+
+        $dakwaan->update([
             'nomor_putusan' => $this->nomor_putusan,
             'tanggal_putusan' => $this->tanggal_putusan,
             'pasal_didakwakan' => $this->pasal_didakwakan,
@@ -114,25 +127,26 @@ class Create extends Component
             'status' => $this->status,
         ]);
 
-        // Simpan data terdakwak
-        $dakwaan->terdakwaks()->create(['nama' => $this->nama_terdakwa]);
+        $dakwaan->terdakwaks()->delete();
+        foreach ($this->terdakwaks as $terdakwa) {
+            $dakwaan->terdakwaks()->create($terdakwa);
+        }
 
-        // Simpan data barang bukti
+        $dakwaan->barangBuktis()->delete();
         foreach ($this->barang_buktis as $barang_bukti) {
             $dakwaan->barangBuktis()->create($barang_bukti);
         }
-        $this->alert('success', 'Data berhasil di submit', [
+
+        $this->alert('success', 'Data berhasil diupdate', [
             'position' => 'center',
             'timer' => 1000,
             'toast' => true,
             'timerProgressBar' => true,
-        ]); 
-        // Reset form
-        $this->reset();
+        ]);
     }
 
     public function render()
     {
-        return view('livewire.app.surat.create');
+        return view('livewire.app.surat.edit');
     }
 }

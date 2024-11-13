@@ -163,6 +163,7 @@ class Index extends Component
             ->when($this->year, function ($query) {
                 $query->whereYear('tanggal_putusan', $this->year);
             })
+            ->orderBy('created_at', 'desc')
             ->paginate($this->perPage);
 
         return view('livewire.app.surat.index', [

@@ -102,7 +102,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="flex gap-5 mx-4">
+                                    <div class="grid grid-cols-4 gap-4 mx-4">
                                         @foreach($barang_buktis as $index => $barang_bukti)
                                             <div class="flex">
                                                 <div class="flex flex-col">

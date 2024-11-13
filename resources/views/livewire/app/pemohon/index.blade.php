@@ -70,6 +70,9 @@
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase ">Status Kawin</th>
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase ">Pekerjaan</th>
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase ">Nomor HP</th>
+                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase ">KTP Pemohon</th>
+                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase ">KTP Pemberi Kuasa</th>
+                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase ">Dokumen pendukung</th>
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white">
@@ -112,6 +115,39 @@
                                         <td class="px-2 md:px-6 py-4">
                                             {{ $pemohon->nomor_hp }}
                                         </td>
+                                        <td class="px-2 md:px-6 py-4">
+                                            @if ($pemohon->ktp_pemohon_path == null)
+                                                -
+                                            @else
+                                                <a target="_blank" href="{{asset('storage/' . $pemohon->ktp_pemohon_path)}}">
+                                                    <div class="py-1 px-4 bg-white text-[#855a2f] font-semibold text-center font-montserrat rounded-lg shadow-md">
+                                                        <span>File</span>
+                                                    </div>
+                                                </a>
+                                            @endif
+                                        </td>
+                                        <td class="px-2 md:px-6 py-4">
+                                            @if ($pemohon->ktp_pemberi_kuasa == null)
+                                                -
+                                            @else
+                                                <a target="_blank" href="{{asset('storage/' . $pemohon->ktp_pemberi_kuasa)}}">
+                                                    <div class="py-1 px-4 bg-white text-[#855a2f] font-semibold text-center font-montserrat rounded-lg shadow-md">
+                                                        <span>File</span>
+                                                    </div>
+                                                </a>
+                                            @endif
+                                        </td>
+                                        <td class="px-2 md:px-6 py-4">
+                                            @if ($pemohon->dokumen_pendukung_path == null)
+                                                -
+                                            @else
+                                            <a target="_blank" href="{{asset('storage/' . $pemohon->dokumen_pendukung_path)}}">
+                                                <div class="py-1 px-4 bg-white text-[#855a2f] font-semibold text-center font-montserrat rounded-lg shadow-md">
+                                                    <span>File</span>
+                                                </div>
+                                            </a>
+                                            @endif
+                                        </td>
                                         {{-- <td class="px-2 md:px-6 py-4">
                                             <div class="flex flex-col gap-8 items-start justify-start">
                                                 @foreach ($pemohon->barangBuktis as $barang_bukti)
@@ -129,7 +165,7 @@
                         </div>
                         
                         <div class="py-4 px-3">
-                            {{-- <div class="flex ">
+                            <div class="flex ">
                                 <div class="flex space-x-4 items-center mb-3">
                                     <label class="w-32 text-sm font-medium text-white">Per Page</label>
                                     <select
@@ -141,9 +177,9 @@
                                         <option value="100">100</option>
                                     </select>
                                 </div>
-                            </div> --}}
-                            {{-- {{$indikators->links()}} --}}
+                            </div>
                         </div>
+                        {{$pemohons->links()}}
                     </div>
                 </div>
             </section>

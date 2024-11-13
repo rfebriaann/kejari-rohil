@@ -90,9 +90,9 @@ class Index extends Component
         $this->validate(); // Validasi file
 
         // // Simpan file ke direktori storage/app/documents
-        $ktp_path = $this->ktp_pemohon->store('documents');
-        $ktp_pemberi_path = $this->ktp_pemberi ? $this->ktp_pemberi->store('documents') : null;
-        $dokumen_pendukung_path = $this->dokumen_pendukung ? $this->dokumen_pendukung->store('documents') : null;
+        $ktp_path = $this->ktp_pemohon->store('documents', 'public');
+        $ktp_pemberi_path = $this->ktp_pemberi ? $this->ktp_pemberi->store('documents', 'public') : null;
+        $dokumen_pendukung_path = $this->dokumen_pendukung ? $this->dokumen_pendukung->store('documents', 'public') : null;
 
         // // Simpan path ke database
         DataPemohon::create([

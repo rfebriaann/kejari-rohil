@@ -6,8 +6,8 @@
         <title>{{ $title ?? config('app.name') }}</title>
         {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" /> --}}
         {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-        <link rel="stylesheet" href="/build/assets/app-qEVJppKm.css">
-        {{-- @vite('resources/css/app.css') --}}
+        {{-- <link rel="stylesheet" href="/build/assets/app-qEVJppKm.css"> --}}
+        @vite('resources/css/app.css')
         @stack('styles')
     </head>
     <body class="bg-[#FBF3DD] text-black">

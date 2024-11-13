@@ -220,19 +220,32 @@
                                                         <label class="text-black" for="">Unggah KTP Pemohon</label>
                                                     </span>
                                                     <p class="text-sm italic">File yang diupload dalam bentuk PDF, dengan batas ukuran 2MB</p>
-                                                    <input  type="file"
-                                                    wire:model="ktp_pemohon"
-                                                    class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
-                                                    placeholder="Unggah KTP Pemohon">
+                                                    <div class="relative">
+                                                        <input 
+                                                            type="file"
+                                                            wire:model="ktp_pemohon"
+                                                            class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
+                                                            placeholder="Unggah KTP Pemohon"
+                                                        >
+                                                        <!-- Elemen Loading -->
+                                                        <div wire:loading wire:target="ktp_pemohon" class="absolute inset-0 flex items-center justify-center bg-[#b7957f] bg-opacity-75 rounded-2xl">
+                                                            <div class="text-white text-sm">Uploading...</div>
+                                                        </div>
+                                                    </div>
                                                     <span class="mx-5 font-montserrat font-medium italic text-sm text-red-800">@error('ktp_pemohon') {{ $message }} @enderror</span>
                                                 </div>
                                                 <div class="basis-2/3">
                                                     <label for="">Unggah KTP Pemberi Kuasa (Apabila diwakili)</label>
                                                     <p class="text-sm italic">File yang diupload dalam bentuk PDF, dengan batas ukuran 2MB</p>
-                                                    <input  type="file"
-                                                    wire:model="ktp_pemberi"
-                                                    class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
-                                                    placeholder="Unggah KTP Pemberi Kuasa">
+                                                    <div class="relative">
+                                                        <input  type="file"
+                                                        wire:model="ktp_pemberi"
+                                                        class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
+                                                        placeholder="Unggah KTP Pemberi Kuasa">
+                                                        <div wire:loading wire:target="ktp_pemberi" class="absolute inset-0 flex items-center justify-center bg-[#b7957f] bg-opacity-75 rounded-2xl">
+                                                            <div class="text-white text-sm">Uploading...</div>
+                                                        </div>
+                                                    </div>
                                                     <span class="mx-5 font-montserrat font-medium italic text-sm text-red-800">@error('ktp_pemberi') {{ $message }} @enderror</span>
                                                 </div>
                                             </div>
@@ -241,10 +254,15 @@
                                             <div class="flex flex-col w-full items-start">
                                                 <label for="">Dokumen Pendukung (KK/STNK/BPKB/atau lainnya)</label>
                                                 <p class="text-sm italic">File yang diupload dalam bentuk PDF, dengan batas ukuran 2MB</p>
-                                                <input  type="file"
-                                                wire:model="dokumen_pendukung"
-                                                class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
-                                                placeholder="Unggah Dokumen Pendukung">
+                                                <div class="relative">
+                                                    <input  type="file"
+                                                    wire:model="dokumen_pendukung"
+                                                    class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
+                                                    placeholder="Unggah Dokumen Pendukung">
+                                                    <div wire:loading wire:target="dokumen_pendukung" class="absolute inset-0 flex items-center justify-center bg-[#b7957f] bg-opacity-75 rounded-2xl">
+                                                        <div class="text-white text-sm">Uploading...</div>
+                                                    </div>
+                                                </div>
                                                 <span class="mx-5 font-montserrat font-medium italic text-sm text-red-800">@error('dokumen_pendukung') {{ $message }} @enderror</span>
                                             </div>
                                         </div>

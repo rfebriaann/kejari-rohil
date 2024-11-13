@@ -199,7 +199,7 @@
                                     </select>
                                 </div>
                             </div>
-                            {{-- {{$indikators->links()}} --}}
+                            {{$dakwaans->links()}}
                         </div>
                     </div>
                 </div>

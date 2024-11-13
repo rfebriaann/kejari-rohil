@@ -46,7 +46,7 @@
                     </form>
                 </div>
                 <div class="font-montserrat italic font-medium">
-                    <h2>developed by Kejari Rohil</h2>
+                    <h2>developed by Peserta Latsar Shely Triliya</h2>
                 </div>
             </div>
         </div>

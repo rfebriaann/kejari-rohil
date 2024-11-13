@@ -98,27 +98,27 @@
                                         </div>
                                     </div>
                                     <div class="flex gap-5 mx-4">
-                                        @foreach($barang_buktis as $index => $barang_bukti)
-                                            <div class="flex">
-                                                <div class="flex flex-col">
-                                                    <span>
-                                                        Nama barang bukti : {{ $barang_bukti['barang_bukti']}}
+                                        <div class="flex gap-5">
+                                            @foreach($barang_buktis as $index => $barang_bukti)
+                                                <div class="font-montserrat font-medium flex flex-col bg-[#D7BDA6] p-4 rounded-2xl text-[#562E18]">
+                                                    <span class="flex">
+                                                        Nama barang bukti : &nbsp <span class="font-semibold">{{ $barang_bukti['barang_bukti']}}</span>
                                                     </span>
                                                     <span>
-                                                        Jumlah :{{ $barang_bukti['jumlah']}}
+                                                        Jumlah : &nbsp <span class="font-semibold">{{ $barang_bukti['jumlah']}}</span>
                                                     </span>
                                                     <span>
-                                                        Lokasi :{{ $barang_bukti['lokasi']}}
+                                                        Lokasi : &nbsp <span class="font-semibold">{{ $barang_bukti['lokasi']}}</span>
                                                     </span>
-                                                    <span class="flex gap-3 mt-2 text-white font-medium font-montserrat italic">
+                                                    <span class="flex gap-3 mt-2 text-white font-medium font-montserrat italic bg-[#562E18] justify-between p-2 rounded-md">
                                                         {{-- {{ $barang_bukti['barang_bukti'] }} - {{ $barang_bukti['jumlah'] }} - {{ $barang_bukti['lokasi'] }}, --}}
-                                                        <button type="button" wire:click="editBarangBukti({{ $index }})" class="text-white underline">
+                                                        <button type="button" wire:click="editBarangBukti({{ $index }})" class="text-[#fff]">
                                                             <span class="flex gap-1">
                                                                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-pencil"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" /><path d="M13.5 6.5l4 4" /></svg>
                                                                 Edit
                                                             </span>
                                                         </button>
-                                                        <button type="button" wire:click="deleteBarangBukti({{ $index }})" class="text-white underline">
+                                                        <button type="button" wire:click="deleteBarangBukti({{ $index }})" class="text-[#fff]">
                                                             <span class="flex gap-1">
                                                                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-trash"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7l16 0" /><path d="M10 11l0 6" /><path d="M14 11l0 6" /><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" /><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>
                                                                 Hapus data
@@ -126,8 +126,8 @@
                                                         </button>
                                                     </span>
                                                 </div>
-                                            </div>
-                                        @endforeach
+                                            @endforeach
+                                        </div>
                                     </div>
                                     
                                     <div class="my-4">
@@ -135,14 +135,6 @@
                                             {{ $editingIndex === null ? 'Tambah Barang Bukti' : 'Update Barang Bukti' }}
                                         </button>
                                     </div>
-                                    {{-- <div class="flex mx-4">
-                                        @foreach($barang_buktis as $barang_bukti)
-                                            <span class="text-white font-medium font-montserrat italic">{{ $barang_bukti['barang_bukti'] }} - {{ $barang_bukti['jumlah'] }} - {{ $barang_bukti['lokasi'] }},&nbsp</span>
-                                        @endforeach
-                                    </div>
-                                    <div class="">
-                                        <button type="button" wire:click="addBarangBukti" class="font-montserrat font-semibold text-gray-700 bg-[#FFFFFF] hover:bg-[#d2d2d2] focus:ring-4 focus:ring-blue-300 rounded-2xl text-sm px-5 py-2.5 focus:outline-none">Tambah Barang Bukti</button>
-                                    </div> --}}
                                 </div>
                                 <div class="flex flex-col gap-4 px-4 py-4 rounded-3xl border-2 border-dashed border-[#0d0e13] -mt-2">
                                     <div class="flex gap-9">
@@ -193,4 +185,3 @@
         @endif --}}
     </div>
 </div>
-

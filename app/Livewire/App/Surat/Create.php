@@ -41,18 +41,15 @@ class Create extends Component
     public function addBarangBukti()
     {
         if ($this->editingIndex === null) {
-            // Add new item
             $this->barang_buktis[] = [
                 'barang_bukti' => $this->barang_bukti,
                 'jumlah' => $this->jumlah,
                 'lokasi' => $this->lokasi,
             ];
         } else {
-            // Update existing item
             $this->updateBarangBukti($this->editingIndex);
         }
 
-        // Clear input fields
         $this->resetInput();
     }
 

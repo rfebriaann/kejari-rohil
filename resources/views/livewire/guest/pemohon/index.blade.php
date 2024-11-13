@@ -13,7 +13,7 @@
                             <p class="font-montserrat text-white font-normal text-lg">Apabila anda membutuhkan format surat kuasa, anda bisa mendonwloadnya disini</p>
                         </div>
                         <div>
-                            <a href="" class="font-montserrat font-semibold px-4 py-2 rounded-3xl bg-white w-1/2 text-center" style="box-shadow: 0px 5px 0 rgb(211, 211, 211);">Download Surat Kuasa</a>
+                            <a download target="_blank" href="https://drive.google.com/folderview?id=1TTjhzjabkb23e9tvqo-h3Mq6HH2ebQdJ" class="font-montserrat font-semibold px-4 py-2 rounded-3xl bg-white w-1/2 text-center" style="box-shadow: 0px 5px 0 rgb(211, 211, 211);">Download Surat Kuasa</a>
                         </div>
                     </div>
                     <div class="basis-1/3 bg-cover bg-gradient-to-t sm:hidden md:block" style="background-image: url('storage/assets/img/bg-1.jpeg')">

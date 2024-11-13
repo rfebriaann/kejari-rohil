@@ -143,6 +143,7 @@ class Edit extends Component
             'toast' => true,
             'timerProgressBar' => true,
         ]);
+        return redirect()->route('app.surat.index');
     }
 
     public function render()

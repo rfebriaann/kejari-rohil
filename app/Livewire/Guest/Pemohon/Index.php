@@ -142,7 +142,8 @@ class Index extends Component
             'toast' => true,
             'timerProgressBar' => true,
         ]); 
-        $this->resetPage();
+        // $this->resetInput();
+        return redirect()->route('guest.pemohon.index');
     }
 
     private function sendNotificationToFonnte()

@@ -54,7 +54,6 @@
                                                 @endforeach
                                             </select>
                                         </div>
-
                                         <div>
                                             <label class="text-white font-montserrat text-sm" for="year">Tahun :</label>
                                             <select wire:model.live="year" id="year" class="bg-[#b7957f] border-2 border-[#5B3018] text-white text-sm rounded-2xl block w-full pl-10 p-2 placeholder-white">

@@ -2,7 +2,7 @@
     <div class="w-full sm:h-[1150px] md:h-[1000px] flex justify-center mt-20 mb-12">
         <div class="mx-20 sm:mx-0 md:mx-20 h-full w-full rounded-3xl">
             <div class="flex flex-col p-2 h-full gap-4">
-                <div class="bg-[#5B3018] w-full bg-cover rounded-3xl basis-2/3 overflow-hidden" style="background-image: url('storage/assets/img/bg-1.jpeg')">
+                <div class="bg-[#5B3018] w-full bg-cover rounded-3xl basis-2/3 overflow-hidden" style="background-image: url('storage/assets/img/bg-2.jpeg')">
                     <div class="bg-cover bg-gradient-to-b from-[#5B3018] w-full h-full">
                         <div class="flex flex-col gap-4 sm:justify-center md:justify-start text-center text-white md:p-40 sm:p-4 sm:items-center sm:h-full">
                             <h1 class="font-montserrat font-semibold sm:text-3xl md:text-5xl">Selamat datang di SIAP-BB</h1>
@@ -108,7 +108,7 @@
                                 </span>
                                 <div class=" ml-4">
                                     <h4 class="text-base font-semibold text-gray-900">Menerima Barang Bukti</h4>
-                                    <p class="text-sm font-normal text-[#AA7743]">Apabila persyaratan telah sesuai, Petugas Barang Bukti dan Jaksa/Eksekutor menyerahkan barang bukti kepada Pemohon disertai dokumentasi</p>
+                                    <p class="text-sm font-normal text-[#AA7743]">Apabila persyaratan telah sesuai, Petugas Barang Bukti dan Jaksa Eksekutor menyerahkan barang bukti kepada Pemohon disertai dokumentasi</p>
                                 </div>
                             </li>
                             <li class="ms-6">

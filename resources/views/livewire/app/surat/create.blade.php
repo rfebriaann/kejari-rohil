@@ -193,9 +193,6 @@
                 </div>
             </section>
         </div>
-        {{-- @if (session()->has('message'))
-            <div>{{ session('message') }}</div>
-        @endif --}}
     </div>
 </div>
 

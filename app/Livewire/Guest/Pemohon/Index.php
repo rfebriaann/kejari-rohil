@@ -167,7 +167,7 @@ class Index extends Component
         CURLOPT_POSTFIELDS => array(
         'target' => $target,
         // 'message' => $this->nama_pemohon . " " . "Mengajukan permohonan di sistem",
-        'message' => "WOIII kerjaaa",
+        'message' => "Segera cek data permohonan!",
         ),
         CURLOPT_HTTPHEADER => array(
             "Authorization: $token"

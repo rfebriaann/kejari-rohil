@@ -46,12 +46,12 @@
                     </form>
                 </div>
                 <div class="font-montserrat italic font-medium">
-                    <h2>developed by Peserta Latsar Shely Triliya</h2>
+                    <h2>developed by Kejari Rohil</h2>
                 </div>
             </div>
         </div>
         <div class="relative basis-1/2 bg-[#FF8552] w-full h-full rounded-[60px] overflow-hidden">
-            <img class="object-cover h-full w-full overflow-hidden" src="{{ asset('storage/assets/img/bg-1.jpeg') }}" alt="">
+            <img class="object-cover h-full w-full overflow-hidden" src="{{ asset('storage/assets/img/bg-2.jpeg') }}" alt="">
             <div class="absolute flex justify-center inset-0 bg-gradient-to-t from-black/75 to-transparent h-full w-full z-10">
                 <div class="p-20">
                     <img class="object-cover size-28 rounded-2xl" src="{{ asset('storage/assets/img/logokejari.png') }}" alt="">

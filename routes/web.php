@@ -16,4 +16,5 @@ Route::middleware('auth', 'role:Super Admin')->group(function() {
     Route::get('/app/surat/edit/{id}', App\Livewire\App\Surat\Edit::class)->name('app.surat.edit.{id}');
     // pemohon
     Route::get('/app/pemohon', App\Livewire\App\Pemohon\Index::class)->name('app.pemohon.index');
+    Route::get('/app/setting', App\Livewire\App\Setting\Edit::class)->name('app.setting.edit');
 });

@@ -7,24 +7,10 @@
                         <img class="object-cover size-24 rounded-3xl" src="{{ asset('storage/assets/img/logokejari.png') }}" alt="">
                     </a>
                 </div>
-                {{-- <div>
-                    <a href="">
-                        <img class="object-cover size-20 rounded-3xl" src="{{ asset('storage/assets/img/logoppapng.png') }}" alt="">
-                    </a>
-                </div> --}}
             </div>
             
             <div>
                 <ul class="space-y-2 font-medium">
-                    {{-- <li>
-                        <a href="" class="flex items-center p-2 hover:text-white rounded-lg  hover:bg-[#fe9e55] group">
-                        <svg class="w-5 h-5 text-[#572E17] transition duration-75 group-hover:text-white " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
-                            <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"/>
-                            <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"/>
-                        </svg>
-                        <span class="ms-3">Dashboard</span>
-                        </a>
-                    </li> --}}
                     <li>
                         <a href="{{route('app.surat.index')}}" class="flex items-center p-2 hover:text-white rounded-lg  hover:bg-[#fe9e55] group">
                         <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor"  class="w-5 h-5 text-[#572E17] transition duration-75 group-hover:text-white "><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 2l.117 .007a1 1 0 0 1 .876 .876l.007 .117v4l.005 .15a2 2 0 0 0 1.838 1.844l.157 .006h4l.117 .007a1 1 0 0 1 .876 .876l.007 .117v9a3 3 0 0 1 -2.824 2.995l-.176 .005h-10a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-14a3 3 0 0 1 2.824 -2.995l.176 -.005h5z" /><path d="M19 7h-4l-.001 -4.001z" /></svg>
@@ -35,6 +21,12 @@
                         <a href="{{route('app.pemohon.index')}}" class="flex items-center p-2 hover:text-white rounded-lg  hover:bg-[#fe9e55] group">
                         <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor"  class="w-5 h-5 text-[#572E17] transition duration-75 group-hover:text-white "><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 2l.117 .007a1 1 0 0 1 .876 .876l.007 .117v4l.005 .15a2 2 0 0 0 1.838 1.844l.157 .006h4l.117 .007a1 1 0 0 1 .876 .876l.007 .117v9a3 3 0 0 1 -2.824 2.995l-.176 .005h-10a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-14a3 3 0 0 1 2.824 -2.995l.176 -.005h5z" /><path d="M19 7h-4l-.001 -4.001z" /></svg>
                         <span class="ms-3">Data Pemohon</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route('app.setting.edit')}}" class="flex items-center p-2 hover:text-white rounded-lg  hover:bg-[#fe9e55] group">
+                        <svg  xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#572E17] transition duration-75 group-hover:text-white "  width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 2a5 5 0 1 1 -5 5l.005 -.217a5 5 0 0 1 4.995 -4.783z" /><path d="M14 14a5 5 0 0 1 5 5v1a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-1a5 5 0 0 1 5 -5h4z" /></svg>
+                        <span class="ms-3">Pengaturan</span>
                         </a>
                     </li>
                 </ul>

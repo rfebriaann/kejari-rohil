@@ -127,10 +127,10 @@
                                             @endif
                                         </td>
                                         <td class="px-2 md:px-6 py-4">
-                                            @if ($pemohon->ktp_pemberi_kuasa == null)
+                                            @if ($pemohon->ktp_pemberi_kuasa_path == null)
                                                 -
                                             @else
-                                                <a target="_blank" href="{{asset('storage/' . $pemohon->ktp_pemberi_kuasa)}}">
+                                                <a target="_blank" href="{{asset('storage/' . $pemohon->ktp_pemberi_kuasa_path)}}">
                                                     <div class="py-1 px-4 bg-white text-[#855a2f] font-semibold text-center font-montserrat rounded-lg shadow-md">
                                                         <span>File</span>
                                                     </div>

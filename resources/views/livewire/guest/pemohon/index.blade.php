@@ -1,7 +1,7 @@
 <div>
     <div class="w-full h-auto flex mt-24 mb-12">
         <div class="sm:px-2 sm:mx-0 md:mx-20 h-full w-full rounded-3xl">
-            <div class="flex flex-col bg-[#5B3018] w-full h-full rounded-3xl overflow-hidden sm:gap-10" style="box-shadow: 0px 14px 0 rgba(87, 46, 23, 1);">
+            <div class="flex flex-col bg-[#5B3018] w-full h-full rounded-3xl overflow-hidden sm:gap-10 md:gap-0" style="box-shadow: 0px 14px 0 rgba(87, 46, 23, 1);">
                 <div class="flex">
                     <div class="flex flex-col w-full h-full basis-2/3 sm:p-10 md:p-20 justify-start items-start gap-6">
                         <div>
@@ -16,7 +16,7 @@
                             <a download target="_blank" href="https://drive.google.com/folderview?id=1TTjhzjabkb23e9tvqo-h3Mq6HH2ebQdJ" class="font-montserrat font-semibold px-4 py-2 rounded-3xl bg-white w-1/2 text-center" style="box-shadow: 0px 5px 0 rgb(211, 211, 211);">Download Surat Kuasa</a>
                         </div>
                     </div>
-                    <div class="basis-1/3 bg-cover bg-gradient-to-t sm:hidden md:block" style="background-image: url('storage/assets/img/bg-1.jpeg')">
+                    <div class="basis-1/3 bg-cover bg-gradient-to-t sm:hidden md:block" style="background-image: url('storage/assets/img/bg-2.jpeg')">
                         <div class="bg-cover bg-gradient-to-r from-[#5B3018] w-full h-full">
                             {{-- <img class="object-cover h-full w-full overflow-hidden" src="{{ asset('storage/assets/img/bg2.png') }}" alt=""> --}}
                         </div>
@@ -172,11 +172,15 @@
                                                     *
                                                     <label class="text-black" for="">Status Perkawinan</label>
                                                 </span>
-                                                <select wire:model="status_perkawinan" class="bg-[#b7957f] mt-2 p-2 border-2  border-[#5B3018] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start">
+                                                {{-- <select wire:model="status_perkawinan" class="bg-[#b7957f] mt-2 p-2 border-2  border-[#5B3018] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start">
                                                     <option value="">-- Status Perkawinan --</option>
                                                     <option value="Sudah Menikah">Sudah Menikah</option>
                                                     <option value="Belum Menikah">Belum Menikah</option>
-                                                </select>
+                                                </select> --}}
+                                                <input  type="text"
+                                                wire:model="status_perkawinan"
+                                                class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
+                                                placeholder="Status perkawinan">
                                                 <span class="mx-5 font-montserrat font-medium italic text-sm text-red-800">@error('status_perkawinan') {{ $message }} @enderror</span>
                                             </div>
                                         </div>

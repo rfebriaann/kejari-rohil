@@ -18,7 +18,7 @@
                         {{-- <span class="text-white font-montserrat text-lg sm:w-full md:w-1/2 leading-6">Download semua data perkara dengan mengklik tombol button dibawah</span> --}}
                         {{-- <button class="font-montserrat font-semibold text-gray-700 bg-[#FFFFFF] hover:bg-[#d2d2d2] focus:ring-4 focus:ring-blue-300 rounded-2xl text-sm px-5 py-2.5 focus:outline-none" wire:click="export">Export to Excel</button> --}}
                     </div>
-                    <div class="basis-1/3 bg-cover bg-gradient-to-t sm:hidden md:block" style="background-image: url('storage/assets/img/bg-1.jpeg')">
+                    <div class="basis-1/3 bg-cover bg-gradient-to-t sm:hidden md:block" style="background-image: url('storage/assets/img/bg-2.jpeg')">
                         <div class="bg-cover bg-gradient-to-r from-[#5B3018] w-full h-full">
                         </div>
                     </div>

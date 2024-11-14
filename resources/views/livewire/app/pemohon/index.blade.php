@@ -58,6 +58,7 @@
                                 <thead class="text-xs text-white uppercase bg-[#855a2f]">
                                     <tr>
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">#</th>
+                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Konfirmasi Pengambilan</th>
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Tanggal Pengambilan</th>
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Nama Terdakwa</th>
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Nama Pemohon</th>
@@ -79,6 +80,11 @@
                                     @foreach ($pemohons as $i => $pemohon)
                                     <tr class="odd:bg-[#a36d37] even:bg-[#855a2f]">
                                         <td class="px-2 md:px-6 py-4">{{ $i + 1 }}</td>
+                                        <td class="px-2 md:px-6 py-4">
+                                            <button class="py-1 px-4 bg-white text-[#855a2f] font-semibold text-center font-montserrat rounded-lg shadow-md" wire:click="confirm({{$pemohon->terdakwa->id}})">
+                                                Konfirmasi pengambilan
+                                            </button>
+                                        </td>
                                         <td class="px-2 md:px-6 py-4">
                                             {{ \Carbon\Carbon::parse($pemohon->tanggal_pengambilan)->translatedFormat('l, j F Y')}}
                                         </td>

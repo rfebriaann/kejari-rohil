@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Livewire\App\Surat;
+namespace App\Livewire\App\Eksekusi;
 
 use App\Models\Dakwaan;
+use App\Models\DataPemohon;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -35,7 +37,7 @@ class Index extends Component
                         $q->where('barang_bukti', 'like', '%' . $this->search . '%');
                     });
             })
-            ->where('status_bb', 0)
+            ->where('status_bb', 1)
             ->when($this->month, function ($query) {
                 $query->whereMonth('tanggal_putusan', $this->month);
             })
@@ -149,26 +151,26 @@ class Index extends Component
     public function render()
     {
         $dakwaans = Dakwaan::with(['terdakwaks', 'barangBuktis'])
-            ->where(function ($query) {
-                $query->where('nomor_putusan', 'like', '%' . $this->search . '%')
-                    ->orWhereHas('terdakwaks', function ($q) {
-                        $q->where('nama', 'like', '%' . $this->search . '%');
-                    })
-                    ->orWhereHas('barangBuktis', function ($q) {
-                        $q->where('barang_bukti', 'like', '%' . $this->search . '%');
-                    });
-            })
-            ->where('status_bb', 0)
-            ->when($this->month, function ($query) {
-                $query->whereMonth('tanggal_putusan', $this->month);
-            })
-            ->when($this->year, function ($query) {
-                $query->whereYear('tanggal_putusan', $this->year);
-            })
-            ->orderBy('created_at', 'desc')
-            ->paginate($this->perPage);
+        ->where(function ($query) {
+            $query->where('nomor_putusan', 'like', '%' . $this->search . '%')
+                ->orWhereHas('terdakwaks', function ($q) {
+                    $q->where('nama', 'like', '%' . $this->search . '%');
+                })
+                ->orWhereHas('barangBuktis', function ($q) {
+                    $q->where('barang_bukti', 'like', '%' . $this->search . '%');
+                });
+        })
+        ->where('status_bb', 1)
+        ->when($this->month, function ($query) {
+            $query->whereMonth('tanggal_putusan', $this->month);
+        })
+        ->when($this->year, function ($query) {
+            $query->whereYear('tanggal_putusan', $this->year);
+        })
+        ->orderBy('created_at', 'desc')
+        ->paginate($this->perPage);
 
-        return view('livewire.app.surat.index', [
+        return view('livewire.app.eksekusi.index', [
             'dakwaans' => $dakwaans
         ]);
     }

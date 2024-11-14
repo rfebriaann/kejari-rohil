@@ -109,6 +109,7 @@ class Create extends Component
             'nomor_register_barang_bukti' => $this->nomor_register_barang_bukti,
             'p48' => $this->p48,
             'status' => $this->status,
+            'status_bb' => 0
         ]);
 
         // Simpan data terdakwak

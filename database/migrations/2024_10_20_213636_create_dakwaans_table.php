@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('nomor_register_barang_bukti');
             $table->string('p48');
             $table->string('status');
+            $table->integer('status_bb');
             $table->timestamps();
         });
         

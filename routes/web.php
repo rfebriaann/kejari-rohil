@@ -17,4 +17,6 @@ Route::middleware('auth', 'role:Super Admin')->group(function() {
     // pemohon
     Route::get('/app/pemohon', App\Livewire\App\Pemohon\Index::class)->name('app.pemohon.index');
     Route::get('/app/setting', App\Livewire\App\Setting\Edit::class)->name('app.setting.edit');
+    // eksekusi
+    Route::get('/app/eksekusi', App\Livewire\App\Eksekusi\Index::class)->name('app.eksekusi.index');
 });

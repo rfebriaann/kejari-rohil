@@ -14,6 +14,7 @@ class Dakwaan extends Model
     'nomor_register_barang_bukti',
     'p48',
     'status',
+    'status_bb'
 ];
 
     public function terdakwaks()

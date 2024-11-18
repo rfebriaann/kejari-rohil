@@ -1,18 +1,25 @@
 <div>
-    <div class="flex flex-row h-screen w-full p-10 gap-20">
-        <div class="basis-1/2 h-full py-16 px-14 flex flex-col justify-between">
+    <div class="flex flex-row h-screen w-full p-10 gap-10">
+        <div class="basis-1/3 h-full py-16 px-14 flex flex-col justify-between">
             <div class="flex flex-col h-full justify-around mx-18">
-                <div class="flex gap-5 justify-start items-center">
+                <div class="flex gap-2 justify-start items-center">
                     <div>
                         <img class="size-32" src="{{ asset('storage/assets/img/logokejari.png') }}" alt="">
                     </div>
-                    <div class="w-48">
+                    <div>
+                        <img class="size-36" src="{{ asset('storage/assets/img/logoppa.png') }}" alt="">
+                    </div>
+                    {{-- <div class="w-48">
                         <h1 class="text-2xl font-montserrat font-bold block">
                             PAPBB Kejaksaan Negeri
                             <span class="">Rokan Hilir</span>
                         </h1>
-                    </div>
+                    </div> --}}
                 </div>
+                <h1 class="text-2xl font-montserrat font-bold block">
+                    PAPBB Kejaksaan Negeri
+                    <span class="">Rokan Hilir</span>
+                </h1>
                 <div class="flex flex-col justify-center gap-4 mt-4">
                     <form wire:submit="login" action="" class="flex flex-col justify-center gap-4 mt-4">
                         <div>
@@ -46,16 +53,16 @@
                     </form>
                 </div>
                 <div class="font-montserrat italic font-medium">
-                    <h2>developed by Kejari Rohil</h2>
+                    <h2>developed by Peserta Latsar Shely Triliya</h2>
                 </div>
             </div>
         </div>
-        <div class="relative basis-1/2 bg-[#FF8552] w-full h-full rounded-[60px] overflow-hidden">
-            <img class="object-cover h-full w-full overflow-hidden" src="{{ asset('storage/assets/img/bg-2.jpeg') }}" alt="">
-            <div class="absolute flex justify-center inset-0 bg-gradient-to-t from-black/75 to-transparent h-full w-full z-10">
-                <div class="p-20">
+        <div class="relative basis-2/3 bg-[#FF8552] w-full h-full rounded-[60px] overflow-hidden">
+            <img class="object-cover h-full w-full overflow-hidden" src="{{ asset('storage/assets/img/bg-3.jpeg') }}" alt="">
+            <div class="absolute flex justify-center inset-0 bg-gradient-to-b from-black/50 to-transparent h-full w-full z-10">
+                {{-- <div class="p-10">
                     <img class="object-cover size-28 rounded-2xl" src="{{ asset('storage/assets/img/logokejari.png') }}" alt="">
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

@@ -22,6 +22,8 @@ class Index extends Component
 
 
     public function confirm($id){
+        // update dakwaan get data ke terdakwa
+        dd($id);
         $dakwaan = Dakwaan::find($id);
         $dakwaan->update([
             'status_bb' => 1

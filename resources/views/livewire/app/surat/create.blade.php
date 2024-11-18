@@ -32,21 +32,24 @@
                                         <input  type="text"
                                         wire:model="nomor_putusan"
                                         class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
-                                        placeholder="Nomor Putusan" required="">
+                                        placeholder="Nomor Putusan">
+                                        <span class="mx-5 font-montserrat font-medium italic text-sm text-red-800">@error('nomor_putusan') {{ $message }} @enderror</span>
                                     </div>
                                     <div>
                                         <label for="">Tanggal</label>
                                         <input  type="date"
                                         wire:model="tanggal_putusan"
                                         class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2  text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start"
-                                        placeholder="Tanggal" required="">
+                                        placeholder="Tanggal">
+                                        <span class="mx-5 font-montserrat font-medium italic text-sm text-red-800">@error('tanggal_putusan') {{ $message }} @enderror</span>
                                     </div>
                                     <div>
                                         <label for="">Pasal Didakwakan</label>
                                         <input  type="text"
                                         wire:model="pasal_didakwakan"
                                         class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
-                                        placeholder="Pasal Didakwakan" required="">
+                                        placeholder="Pasal Didakwakan">
+                                        <span class="mx-5 font-montserrat font-medium italic text-sm text-red-800">@error('pasal_didakwakan') {{ $message }} @enderror</span>
                                     </div>
                                 </div>
                             </div>
@@ -60,6 +63,7 @@
                                             wire:model="nama_terdakwa"
                                             class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
                                             placeholder="Nama Terdakwa">
+                                            <span class="mx-5 font-montserrat font-medium italic text-sm text-red-800">@error('nama_terdakwa') {{ $message }} @enderror</span>
                                         </div>
                                     </div>
                                     {{-- <div class="flex mx-4">
@@ -79,7 +83,9 @@
                                                 <input  type="text"
                                                 wire:model="barang_bukti"
                                                 class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
-                                                placeholder="Nama Barang Bukti">
+                                                placeholder="Nama Barang Bukti"
+                                                >
+                                                <span class="mx-5 font-montserrat font-medium italic text-sm text-red-800">@error('barang_bukti') {{ $message }} @enderror</span>
                                             </div>
                                             
                                         </div>
@@ -89,7 +95,9 @@
                                                 <input  type="text"
                                                 wire:model="jumlah"
                                                 class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
-                                                placeholder="Jumlah barang bukti">
+                                                placeholder="Jumlah barang bukti"
+                                                >
+                                                <span class="mx-5 font-montserrat font-medium italic text-sm text-red-800">@error('jumlah') {{ $message }} @enderror</span>
                                             </div>
                                         </div>
                                         <div class="flex flex-col w-1/2">
@@ -98,7 +106,9 @@
                                                 <input  type="text"
                                                 wire:model="lokasi"
                                                 class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
-                                                placeholder="Lokasi barang bukti">
+                                                placeholder="Lokasi barang bukti"
+                                                >
+                                                <span class="mx-5 font-montserrat font-medium italic text-sm text-red-800">@error('lokasi') {{ $message }} @enderror</span>
                                             </div>
                                         </div>
                                     </div>
@@ -162,6 +172,7 @@
                                                 wire:model="amar_barang_bukti"
                                                 class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
                                                 placeholder="Amar putusan">
+                                                <span class="mx-5 font-montserrat font-medium italic text-sm text-red-800">@error('amar_barang_bukti') {{ $message }} @enderror</span>
                                             </div>
                                             <div class="">
                                                 <label for="">Nomor Register</label>
@@ -169,6 +180,7 @@
                                                 wire:model="nomor_register_barang_bukti"
                                                 class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
                                                 placeholder="Nomor Register Barang Bukti">
+                                                <span class="mx-5 font-montserrat font-medium italic text-sm text-red-800">@error('nomor_register_barang_bukti') {{ $message }} @enderror</span>
                                             </div>
                                         </div>
                                         <div class="flex flex-col w-1/2 gap-4">
@@ -178,6 +190,7 @@
                                                 wire:model="p48"
                                                 class="bg-[#b7957f] border-2 border-[#5B3018] mt-2 p-2 text-white text-sm rounded-2xl  focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-4 text-start placeholder:text-white"
                                                 placeholder="Kode P-48">
+                                                <span class="mx-5 font-montserrat font-medium italic text-sm text-red-800">@error('p48') {{ $message }} @enderror</span>
                                             </div>
                                             <div class="">
                                                 <label for="">Status</label>
@@ -186,6 +199,7 @@
                                                     <option value="Dapat Diambil">Dapat diambil</option>
                                                     <option value="Belum Dapat Diambil">Belum dapat diambil</option>
                                                 </select>
+                                                <span class="mx-5 font-montserrat font-medium italic text-sm text-red-800">@error('status') {{ $message }} @enderror</span>
                                             </div>
                                         </div>
                                     </div>
@@ -204,7 +218,7 @@
 {{-- <input  type="text"
 wire:model="nomor_putusan"
 class="bg-[#2b2f3f] p-4 border border-[#BB91FF] text-white text-sm rounded-2xl focus:ring-[#BB91FF] focus:border-[#BB91FF] block w-full pl-10 text-start"
-placeholder="Search" required=""> --}}
+placeholder="Search"> --}}
 
 
 {{-- <button type="button" wire:click="removeTerdakwa({{ $index }})" class="font-montserrat font-medium text-white bg-[#e13775] hover:bg-[#e8588d] focus:ring-4 focus:ring-blue-300 rounded-2xl text-sm px-4 py-1.5 mb-2 focus:outline-nonee">Hapus Terdakwa</button> --}}

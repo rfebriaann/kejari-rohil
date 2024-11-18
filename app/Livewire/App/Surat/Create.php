@@ -40,6 +40,11 @@ class Create extends Component
 
     public function addBarangBukti()
     {
+        $this->validate([
+            'barang_bukti' => 'required|string',
+            'jumlah' => 'required',
+            'lokasi' => 'required|string',
+        ]);
         if ($this->editingIndex === null) {
             $this->barang_buktis[] = [
                 'barang_bukti' => $this->barang_bukti,
@@ -95,6 +100,9 @@ class Create extends Component
             'pasal_didakwakan' => 'required|string',
             'nama_terdakwa' => 'required|string',
             'barang_buktis' => 'required|array|min:1',
+            // 'barang_bukti' => 'required|string',
+            // 'jumlah' => 'required',
+            // 'lokasi' => 'required|string',
             'amar_barang_bukti' => 'required',
             'p48' => 'required',
             'status' => 'required',

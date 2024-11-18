@@ -1,7 +1,8 @@
 <div class="py-16 bg-[#5B3018]">
     <div class="flex flex-col lg:flex-row lg:justify-between items-center mx-4 md:mx-20 lg:mx-40">
-        <div class="mb-10 lg:mb-0">
+        <div class="flex gap-4 mb-10 lg:mb-0">
             <img class="size-28" src="{{ asset('storage/assets/img/logokejari.png') }}" alt="Animated SVG">
+            <img class="size-28" src="{{ asset('storage/assets/img/logoppa.png') }}" alt="Animated SVG">
         </div>
         <div class="flex flex-col lg:flex-row gap-10 lg:gap-28">
             <div class="flex flex-col gap-5">

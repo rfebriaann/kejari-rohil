@@ -57,7 +57,7 @@
                             <table class="min-w-full divide-y divide-gray-200 text-sm font-montserrat">
                                 <thead class="text-xs text-white uppercase bg-[#855a2f]">
                                     <tr>
-                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">#</th>
+                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">No.</th>
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Konfirmasi Pengambilan</th>
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Tanggal Pengambilan</th>
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Nama Terdakwa</th>
@@ -173,7 +173,7 @@
                         <div class="py-4 px-3">
                             <div class="flex ">
                                 <div class="flex space-x-4 items-center mb-3">
-                                    <label class="w-32 text-sm font-medium text-white">Per Page</label>
+                                    <label class="w-32 text-sm font-medium text-white">Tampilkan dalam</label>
                                     <select
                                         wire:model.live='perPage' 
                                         class="bg-[#5B3018] rounded-xl border text-white text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">

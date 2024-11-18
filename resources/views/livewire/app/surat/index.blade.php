@@ -188,7 +188,7 @@
                         <div class="py-4 px-3">
                             <div class="flex ">
                                 <div class="flex space-x-4 items-center mb-3">
-                                    <label class="w-32 text-sm font-medium text-white">Per Page</label>
+                                    <label class="w-32 text-sm font-medium text-white">Tampilkan dalam</label>
                                     <select
                                         wire:model.live='perPage' 
                                         class="bg-[#5B3018] rounded-xl border text-white text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">

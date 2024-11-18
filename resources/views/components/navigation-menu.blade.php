@@ -2,6 +2,7 @@
     <div class="w-full max-w-[1240px] flex items-center justify-between mx-auto">
         <div class="flex items-center mx-10">
             <img class="sm:size-10 md:size-14" src="{{ asset('storage/assets/img/logokejari.png') }}" class="h-12 mr-3" alt="Logo" />
+            <img class="sm:size-12 md:size-16" src="{{ asset('storage/assets/img/logoppa.png') }}" class="h-12 mr-3" alt="Logo" />
             {{-- <span class="self-center text-2xl text-white font-semibold font-montserrat">Istana Data</span> --}}
         </div>
         <!-- Mobile menu button -->
@@ -26,6 +27,7 @@
         <div class="flex justify-between items-center px-4 mx-6">
             <div class="flex items-center">
                 <img class="sm:size-10 md:size-14 sm:mt-2" src="{{ asset('storage/assets/img/logokejari.png') }}" class="h-12 mr-3" alt="Logo" />
+                <img class="sm:size-12 md:size-16" src="{{ asset('storage/assets/img/logoppa.png') }}" class="h-12 mr-3" alt="Logo" />
                 {{-- <span class="self-center text-2xl text-white font-semibold font-montserrat">Istana Data</span> --}}
             </div>
             <button id="close-menu" class="text-white text-3xl focus:outline-none">×</button>

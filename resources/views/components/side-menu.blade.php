@@ -7,6 +7,11 @@
                         <img class="object-cover size-24 rounded-3xl" src="{{ asset('storage/assets/img/logokejari.png') }}" alt="">
                     </a>
                 </div>
+                <div>
+                    <a href="">
+                        <img class="object-cover size-24 rounded-3xl" src="{{ asset('storage/assets/img/logoppa.png') }}" alt="">
+                    </a>
+                </div>
             </div>
             
             <div>

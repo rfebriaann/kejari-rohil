@@ -67,7 +67,7 @@
                                     <tr>
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">No.</th>
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Nama Terdakwa</th>
-                                        <th class="px-2 md:px-32 py-3 text-center font-semibold uppercase">Pasal yang Didakwakan</th>
+                                        <th class="px-2 md:px-24 py-3 text-center font-semibold uppercase">Pasal yang Didakwakan</th>
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">No. Putusan</th>
                                         <th class="px-2 md:px-24 py-3 text-center font-semibold uppercase">Tanggal Putusan</th>
                                         <th class="px-2 md:px-24 py-3 text-center font-semibold uppercase">Barang Bukti</th>
@@ -75,7 +75,7 @@
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Lokasi Barang Bukti</th>
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">Amar Putusan</th>
                                         <th class="px-2 md:px-6  py-3 text-center font-semibold uppercase">Nomor Register Barang Bukti</th>
-                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase ">P-48</th>
+                                        <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase">P-48</th>
                                         <th class="px-2 md:px-28 py-3 text-center font-semibold uppercase" style="width: 150px;">Status</th>
                                         <th class="px-2 md:px-6 py-3 text-center font-semibold uppercase ">Aksi</th>
                                     </tr>
@@ -182,7 +182,7 @@
                         <div class="py-4 px-3">
                             <div class="flex ">
                                 <div class="flex space-x-4 items-center mb-3">
-                                    <label class="w-32 text-sm font-medium text-white">Per Page</label>
+                                    <label class="w-32 text-sm font-medium text-white">Tampilkan dalam</label>
                                     <select
                                         wire:model.live='perPage' 
                                         class="bg-[#5B3018] rounded-xl border text-white text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
